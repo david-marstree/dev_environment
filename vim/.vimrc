@@ -10,6 +10,8 @@ call plug#begin('~/.vim/plugged')
 
   " CtrlP
   Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
+  " split window
+  Plug 'christoomey/vim-tmux-navigator'
 
   " Polyglot
   Plug 'sheerun/vim-polyglot'
@@ -45,8 +47,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 
-  " split window
-  Plug 'christoomey/vim-tmux-navigator'
 
   " Compiles your less files on the fly
   Plug 'groenewege/vim-less'
