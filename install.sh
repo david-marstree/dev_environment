@@ -23,6 +23,8 @@ then
 	cp -rf $HOME/.vimrc $HOME/.vimrc.backup
 fi
 ln -s $PWD/.vimrc $HOME/.vimrc
+vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
+vim -E -s -u "$HOME/.vimrc" +PluginInstall +qall
 
 echo "Finish"
 exit 0
