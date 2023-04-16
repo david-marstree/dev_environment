@@ -1,10 +1,12 @@
 #!/bin/bash
+brew install source-highlight
+
 # Install Vim-plug
 if [ ! -e $HOME/.vim/autoload/plug.vim ]
 then
-	curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
-	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
+
 # Install Vundle
 if [ ! -e $HOME/.vim/bundle/Vundle.vim ]
 then
@@ -15,10 +17,13 @@ fi
 if [ ! -e $HOME/.vim/autoload/pathogen.vim ]
 then
 	curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+	git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle
+
 fi
+
 if [ ! -d $HOME/.pack/plugins/start/vim-tmux-navigator ]
 then
-	git clone git@github.com:christoomey/vim-tmux-navigator.git ~/.vim/pack/plugins/start/vim-tmux-navigator
+	git clone https://github.com:christoomey/vim-tmux-navigator.git ~/.vim/pack/plugins/start/vim-tmux-navigator
 fi
 
 # bankup vimrc
@@ -39,7 +44,7 @@ ln -s $PWD/tmux/.tmux.conf $HOME/.tmux.conf
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-
+tmux source $HOME/.tmux.conf
 vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
 vim -E -s -u "$HOME/.vimrc" +PluginInstall +qall
 

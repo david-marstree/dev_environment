@@ -20,7 +20,7 @@ call plug#begin('~/.vim/plugged')
 
   " Nerdtree
   Plug 'scrooloose/nerdtree'
-  Plug 'ryanoasis/vim-devicons'
+ Plug 'ryanoasis/vim-devicons'
 
   " NERD Commenter
   Plug 'scrooloose/nerdcommenter'
@@ -47,7 +47,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 
-
   " Compiles your less files on the fly
   Plug 'groenewege/vim-less'
 
@@ -57,6 +56,15 @@ call plug#begin('~/.vim/plugged')
   " AutoComplete
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+  "search and highlight
+  Plug 'markonm/traces.vim'
+  Plug 'haya14busa/incsearch.vim'
+  " IndentLine
+  Plug 'yggdroot/indentline'
+
+  " COC
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   " Deoplete
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -75,6 +83,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'jparise/vim-graphql'
 
   "HTML
+  Plug 'docunext/closetag.vim'
   Plug 'mattn/emmet-vim'
   Plug 'lilydjwg/colorizer'
   Plug 'dense-analysis/ale'
@@ -93,7 +102,7 @@ let g:ctrlp_custom_ignore = {
 
 " Vundle
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   " let Vundle manage Vundle, required
   Plugin 'VundleVim/Vundle.vim'
@@ -124,8 +133,18 @@ let mapleader = " "
 :nnoremap <leader>sv :vsp<CR>
 :nnoremap <leader>sx :close<CR>
 :nnoremap <leader>mp :MarkdownPreview<CR>
+"" function typescript
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+"" for search highlight
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
-
+set re=0
 set encoding=UTF-8
 set showtabline=2
 set number
@@ -133,6 +152,11 @@ set showcmd
 set complete+=kspell
 set completeopt=menuone,longest
 set shortmess+=c
+set shiftwidth=2
+set autoindent
+set smartindent
+set cindent
+set list lcs=tab:\|\ " (here is a space)
 
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeWinPos = "left"
@@ -162,6 +186,9 @@ let g:user_emmet_leader_key=','
 colorscheme afterglow
 let g:airline_theme='afterglow'
 
+let g:coc_global_extensions = [
+    \ 'coc-tsserver'
+    \]
 " Use deoplete.
 syntax on
 "let g:deoplete#enable_at_startup = 1
@@ -190,7 +217,7 @@ let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 
 
-""javscript React typescript
+" javscript React typescript
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 autocmd BufWritePre *.php PrettierAsync
