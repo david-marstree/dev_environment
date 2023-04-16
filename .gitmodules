@@ -1,3 +1,3 @@
 [submodule "osx-terminal-themes"]
 	path = osx-terminal-themes
-	url = ./osx-terminal-themes
+	url = https://github.com/stealthybox/osx-terminal-themes.git
