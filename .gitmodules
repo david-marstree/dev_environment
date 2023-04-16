@@ -1,0 +1,3 @@
+[submodule "osx-terminal-themes"]
+	path = osx-terminal-themes
+	url = ./osx-terminal-themes
