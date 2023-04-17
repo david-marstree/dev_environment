@@ -20,7 +20,7 @@ call plug#begin('~/.vim/plugged')
 
   " Nerdtree
   Plug 'scrooloose/nerdtree'
- Plug 'ryanoasis/vim-devicons'
+  Plug 'ryanoasis/vim-devicons'
 
   " NERD Commenter
   Plug 'scrooloose/nerdcommenter'
@@ -157,7 +157,9 @@ set autoindent
 set smartindent
 set cindent
 set list lcs=tab:\|\ " (here is a space)
+set nowrap
 
+let g:prettier#config#prose_wrap = 'never'
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeWinPos = "left"
 let g:startify_custom_header = [
@@ -210,17 +212,20 @@ let g:ale_linters = {
       \   'DockerFile': ['dockerfile_lint'],
       \}
 let g:ale_linters_explicit = 1
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 let g:ale_completion_autoimport = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
+let g:ale_set_quickfix = 0
 
 
 " javscript React typescript
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 autocmd BufWritePre *.php PrettierAsync
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php PrettierAsync
+
 
 " Less compile
 autocmd FileWritePost,BufWritePost *.less :call LessCSSCompress()

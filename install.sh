@@ -54,6 +54,9 @@ brew install koekeishiya/formulae/yabai
 # Install SKHD
 brew install koekeishiya/formulae/skhd
 
+# Install Prettier
+npm install -g prettier
+
 mkdir ~/.config
 cp -rf skhd ~/.config
 cp -rf yabai ~/.config
