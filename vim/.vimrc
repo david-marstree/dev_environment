@@ -133,6 +133,12 @@ let mapleader = " "
 :nnoremap <leader>sv :vsp<CR>
 :nnoremap <leader>sx :close<CR>
 :nnoremap <leader>mp :MarkdownPreview<CR>
+:nnoremap <leader><left> :vertical resize+5 <CR>
+:nnoremap <leader><right> :vertical resize-5 <CR>
+" Clipboard copy and paste
+:nnoremap <leader>p :r !pbpaste<CR>
+:xnoremap <leader>y :%w !pbcopy<CR>
+
 "" function typescript
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -144,6 +150,7 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+set mouse=a
 set re=0
 set encoding=UTF-8
 set showtabline=2
@@ -217,14 +224,14 @@ let g:ale_completion_autoimport = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
-let g:ale_set_quickfix = 0
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 
 
 " javscript React typescript
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-autocmd BufWritePre *.php PrettierAsync
-autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php PrettierAsync
 
 
 " Less compile
