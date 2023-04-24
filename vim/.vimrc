@@ -57,6 +57,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
+  
   "search and highlight
   Plug 'markonm/traces.vim'
   Plug 'haya14busa/incsearch.vim'
@@ -74,6 +75,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'prabirshrestha/vim-lsp'
   " Easy lsp server installation
   Plug 'mattn/vim-lsp-settings'
+  
 
   "Javascript React typescript
   Plug 'pangloss/vim-javascript'
@@ -92,6 +94,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()
+
 
 packloadall
 
@@ -220,6 +223,7 @@ let g:ale_linters = {
       \}
 let g:ale_linters_explicit = 1
 " let g:ale_fix_on_save = 1
+let g:ale_completion_enable = 1
 let g:ale_completion_autoimport = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '>>'
@@ -229,8 +233,8 @@ let g:ale_set_quickfix = 1
 
 
 " javscript React typescript
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+autocmd BufWritePre *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufWritePre *.{js,jsx,ts,tsx} :syntax sync clear
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php PrettierAsync
 
 

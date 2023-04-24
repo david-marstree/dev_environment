@@ -1,4 +1,5 @@
 #!/bin/bash
+
 brew install source-highlight
 
 # Install Vim-plug
