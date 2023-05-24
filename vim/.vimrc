@@ -85,7 +85,8 @@ call plug#begin('~/.vim/plugged')
   "HTML
   Plug 'docunext/closetag.vim'
   Plug 'mattn/emmet-vim'
-  Plug 'lilydjwg/colorizer'
+  Plug 'ap/vim-css-color'
+  " Plug 'lilydjwg/colorizer'
   Plug 'dense-analysis/ale'
 
   "Markdown
@@ -153,6 +154,12 @@ inoremap <silent><expr> <c-@> coc#refresh()
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
 "" for search highlight
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -161,6 +168,7 @@ map g/ <Plug>(incsearch-stay)
 
 " Codiums
 let g:codium_disable_bingings = 1
+let g:codeium_no_map_tab = 1
 imap <script><silent><nowait><expr> <C-g> codeium#Accept()
 imap <M-]>   <Cmd>call codeium#CycleCompletions(1)<CR>
 imap <M-[>   <Cmd>call codeium#CycleCompletions(-1)<CR>
