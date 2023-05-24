@@ -53,11 +53,6 @@ call plug#begin('~/.vim/plugged')
   " Prettier
   Plug 'prettier/vim-prettier', { 'do': 'yarn add', 'for': ['javascript', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html', 'php'] }
 
-  " AutoComplete
-  Plug 'prabirshrestha/asyncomplete.vim'
-  Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
-  
   "search and highlight
   Plug 'markonm/traces.vim'
   Plug 'haya14busa/incsearch.vim'
@@ -67,22 +62,25 @@ call plug#begin('~/.vim/plugged')
   " COC
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+  " Codium AI for coding suggestion
+  Plug 'Exafunction/codeium.vim'
+
+  "tagbar
+  Plug 'majutsushi/tagbar'
+  
   " Deoplete
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  " Show completion results from syntax highliting file
-  Plug 'Shougo/neco-syntax'
   " Vim lsp support
   Plug 'prabirshrestha/vim-lsp'
   " Easy lsp server installation
   Plug 'mattn/vim-lsp-settings'
   
-
   "Javascript React typescript
-  Plug 'pangloss/vim-javascript'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'peitalin/vim-jsx-typescript'
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  Plug 'jparise/vim-graphql'
+"  Plug 'pangloss/vim-javascript'
+"  Plug 'leafgarland/typescript-vim'
+"  Plug 'peitalin/vim-jsx-typescript'
+"  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+"  Plug 'jparise/vim-graphql'
 
   "HTML
   Plug 'docunext/closetag.vim'
@@ -109,7 +107,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   " let Vundle manage Vundle, required
   Plugin 'VundleVim/Vundle.vim'
-  Plugin 'jiangmiao/auto-pairs'
   Plugin 'groenewege/vim-less'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -117,6 +114,7 @@ filetype plugin indent on    " required
 call pathogen#infect()
 "" Key Commands
 let mapleader = " "
+imap jk <C-[><CR>
 :nnoremap <leader>e :NERDTreeToggle <CR>
 :nnoremap <leader>ff :FZF <CR>
 :nnoremap <leader>fs :Rg <CR>
@@ -148,10 +146,25 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" for Tagbar
+nmap <F8> :TagbarToggle<CR>
+inoremap <silent><expr> <c-@> coc#refresh()
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 "" for search highlight
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+
+" Codiums
+let g:codium_disable_bingings = 1
+imap <script><silent><nowait><expr> <C-g> codeium#Accept()
+imap <M-]>   <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <M-[>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+imap <C-x>   <Cmd>call codeium#Clear()<CR>
 
 set mouse=a
 set re=0
@@ -159,8 +172,6 @@ set encoding=UTF-8
 set showtabline=2
 set number
 set showcmd
-set complete+=kspell
-set completeopt=menuone,longest
 set shortmess+=c
 set shiftwidth=2
 set autoindent
@@ -171,7 +182,7 @@ set nowrap
 
 let g:prettier#config#prose_wrap = 'never'
 let g:NERDTreeMinimalUI=1
-let g:NERDTreeWinPos = "left"
+let g:NERDTreeWinPos="left"
 let g:startify_custom_header = [
 \'  $$\      $$\  $$$$$$\  $$$$$$$\   $$$$$$\    $$\',
 \'  $$$\    $$$ |$$  __$$\ $$  __$$\ $$  __$$\   $$ |',
@@ -233,10 +244,10 @@ let g:ale_set_quickfix = 1
 
 
 " javscript React typescript
-autocmd BufWritePre *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufWritePre *.{js,jsx,ts,tsx} :syntax sync clear
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php PrettierAsync
-
+"autocmd BufWritePre *.{js,jsx,ts,tsx} :syntax sync fromstart
+"autocmd BufWritePre *.{js,jsx,ts,tsx} :syntax sync clear
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php :PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php :syntax enable
 
 " Less compile
 autocmd FileWritePost,BufWritePost *.less :call LessCSSCompress()
@@ -249,4 +260,4 @@ function! LessCSSCompress()
 endfunction
 
 " Command for Rg
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number -g \"!{node_modules/*,.git/*}\" --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)

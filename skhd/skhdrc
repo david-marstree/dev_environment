@@ -92,9 +92,4 @@ ctrl - 5 : yabai -m space --focus 15; yabai -m space --focus 5;
 alt + shift - left : yabai -m window --ratio abs:0.25;
 alt + shift - right : yabai -m window --ratio abs:0.75;
 
-#my custom app open
-ctrl + shift + alt - 1: yabai -m space --focus 11 && open -na "Google Chrome" --args --new-window "https://tasks.office.com/marsgroup.ltd/zh-TW/Home/Planner/" && sleep 2 && open -na "Google Chrome" --args --new-window "https://google.com"; yabai -m space --focus 1 && open -na "Terminal";
-ctrl + shift + alt - 2 : yabai -m space --focus 12 && open -na "Google Chrome" --args --new-window "https://google.com"; yabai -m space --focus 2 && open -na "Figma";
-ctrl + shift + alt - 8: yabai -m space --focus 8 && open -na "Microsoft Teams";
-ctrl + shift + alt - 9: yabai -m space --focus 9 && open -na "WhatsApp" ; open -na "WeChat";
 
