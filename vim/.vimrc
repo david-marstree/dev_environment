@@ -218,7 +218,18 @@ colorscheme afterglow
 let g:airline_theme='afterglow'
 
 let g:coc_global_extensions = [
-    \ 'coc-tsserver'
+    \ 'coc-tsserver',
+    \ 'coc-eslint',
+    \ 'coc-prettier',
+    \ 'coc-json',
+    \ 'coc-html',
+    \ 'coc-css',
+    \ 'coc-highlight',
+    \ 'coc-snippets',
+    \ 'coc-pairs',
+    \ 'coc-phpls',
+    \ 'coc-markdownlint',
+    \ 'coc-docker',
     \]
 " Use deoplete.
 syntax on
