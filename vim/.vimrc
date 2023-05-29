@@ -142,7 +142,9 @@ imap jk <C-[><CR>
 :nnoremap <leader><right> :vertical resize-5 <CR>
 " Clipboard copy and paste
 :nnoremap <leader>p :r !pbpaste<CR>
+:nnoremap <C-v> :r !pbpaste<CR>
 :xnoremap <leader>y :%w !pbcopy<CR>
+:xnoremap <C-y> :%w !pbcopy<CR>
 
 "" function typescript
 nmap <C-s> :w<CR>
