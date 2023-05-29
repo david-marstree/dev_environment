@@ -160,6 +160,7 @@ nmap <F8> :TagbarToggle<CR>
 " for LazyGit
 nmap <F7> :FloatermNew! lazygit<CR>
 nmap <F6> :FloatermNew --cmd="/bin/bash"<CR>
+:nnoremap <leader>fx :FloatermKill<CR>
 
 inoremap <silent><expr> <c-@> coc#refresh()
 " Make <CR> to accept selected completion item or notify coc.nvim to format
