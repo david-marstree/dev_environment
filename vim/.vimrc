@@ -159,6 +159,8 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <F8> :TagbarToggle<CR>
 " for LazyGit
 nmap <F7> :FloatermNew! lazygit<CR>
+nmap <F6> :FloatermNew --cmd="/bin/bash"<CR>
+
 inoremap <silent><expr> <c-@> coc#refresh()
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice
