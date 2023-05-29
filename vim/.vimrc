@@ -240,13 +240,13 @@ let g:coc_global_extensions = [
 " Use deoplete.
 syntax on
 "let g:deoplete#enable_at_startup = 1
-call ale#linter#Define('php', {
-\   'name': 'intelephense',
-\   'lsp': 'stdio',
-\   'executable': 'intelephense',
-\   'command': '%e --stdio',
-\   'project_root': function('ale_linters#php#langserver#GetProjectRoot')
-\ })
+" call ale#linter#Define('php', {
+" \   'name': 'intelephense',
+" \   'lsp': 'stdio',
+" \   'executable': 'intelephense',
+" \   'command': '%e --stdio',
+" \   'project_root': function('ale_linters#php#langserver#GetProjectRoot')
+" \ })
 " let g:ale_fixers = {
 "       \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 "       \   'html': ['prettier'],
@@ -264,7 +264,7 @@ let g:ale_linters = {
       \   'typescript': ['eslint'],
       \   'markdown': ['markdownlint'],
       \   'DockerFile': ['dockerfile_lint'],
-      \   'php': ['php','php_cs_fixer', 'psalm', 'intelephense'],
+      \   'php': ['php','php_cs_fixer', 'psalm' ],
       \}
 let g:ale_linters_explicit = 1
 " let g:ale_fix_on_save = 1
