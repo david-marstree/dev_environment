@@ -150,6 +150,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
 " for Tagbar
 nmap <F8> :TagbarToggle<CR>
 " for LazyGit
@@ -174,7 +175,7 @@ map g/ <Plug>(incsearch-stay)
 " Codiums
 let g:codium_disable_bingings = 1
 let g:codeium_no_map_tab = 1
-imap <script><silent><nowait><expr> <C-TAB> codeium#Accept()
+imap <script><silent><nowait><expr> <C-g> codeium#Accept()
 imap <M-]>   <Cmd>call codeium#CycleCompletions(1)<CR>
 imap <M-[>   <Cmd>call codeium#CycleCompletions(-1)<CR>
 imap <C-x>   <Cmd>call codeium#Clear()<CR>
