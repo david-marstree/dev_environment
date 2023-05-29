@@ -67,6 +67,9 @@ call plug#begin('~/.vim/plugged')
 
   "tagbar
   Plug 'majutsushi/tagbar'
+
+  "Vim floaterm
+  Plug 'voldikss/vim-floaterm'
   
   " Deoplete
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -149,6 +152,8 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " for Tagbar
 nmap <F8> :TagbarToggle<CR>
+" for LazyGit
+nmap <F7> :FloatermNew! lazygit<CR>
 inoremap <silent><expr> <c-@> coc#refresh()
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice
@@ -169,7 +174,7 @@ map g/ <Plug>(incsearch-stay)
 " Codiums
 let g:codium_disable_bingings = 1
 let g:codeium_no_map_tab = 1
-imap <script><silent><nowait><expr> <C-g> codeium#Accept()
+imap <script><silent><nowait><expr> <C-TAB> codeium#Accept()
 imap <M-]>   <Cmd>call codeium#CycleCompletions(1)<CR>
 imap <M-[>   <Cmd>call codeium#CycleCompletions(-1)<CR>
 imap <C-x>   <Cmd>call codeium#Clear()<CR>
