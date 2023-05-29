@@ -145,6 +145,8 @@ imap jk <C-[><CR>
 :xnoremap <leader>y :%w !pbcopy<CR>
 
 "" function typescript
+nmap <C-s> :w<CR>
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
