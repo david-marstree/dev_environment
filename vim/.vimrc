@@ -234,15 +234,23 @@ let g:coc_global_extensions = [
 " Use deoplete.
 syntax on
 "let g:deoplete#enable_at_startup = 1
-let g:ale_fixers = {
-      \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \   'html': ['prettier'],
-      \   'css': ['stylelint'],
-      \   'javascript': ['eslint', 'prettier'],
-      \   'typescript': ['eslint', 'prettier'],
-      \   'markdown': ['markdownlint'],
-      \   'DockerFile': ['dockerfile_lint'],
-      \}
+call ale#linter#Define('php', {
+\   'name': 'intelephense',
+\   'lsp': 'stdio',
+\   'executable': 'intelephense',
+\   'command': '%e --stdio',
+\   'project_root': function('ale_linters#php#langserver#GetProjectRoot')
+\ })
+" let g:ale_fixers = {
+"       \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+"       \   'html': ['prettier'],
+"       \   'css': ['stylelint'],
+"       \   'javascript': ['eslint', 'prettier'],
+"       \   'typescript': ['eslint', 'prettier'],
+"       \   'markdown': ['markdownlint'],
+"       \   'DockerFile': ['dockerfile_lint'],
+"       \   'php': ['php_cs_fixer'],
+"       \}
 let g:ale_linters = {
       \   'html': ['htmlhint'],
       \   'css': ['stylelint'],
@@ -250,6 +258,7 @@ let g:ale_linters = {
       \   'typescript': ['eslint'],
       \   'markdown': ['markdownlint'],
       \   'DockerFile': ['dockerfile_lint'],
+      \   'php': ['php','php_cs_fixer', 'psalm', 'intelephense'],
       \}
 let g:ale_linters_explicit = 1
 " let g:ale_fix_on_save = 1
@@ -259,7 +268,7 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+" let g:ale_set_quickfix = 1
 
 
 " javscript React typescript
