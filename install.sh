@@ -24,7 +24,7 @@ fi
 
 if [ ! -d $HOME/.pack/plugins/start/vim-tmux-navigator ]
 then
-	git clone https://github.com:christoomey/vim-tmux-navigator.git ~/.vim/pack/plugins/start/vim-tmux-navigator
+	git clone https://github.com/christoomey/vim-tmux-navigator.git ~/.vim/pack/plugins/start/vim-tmux-navigator
 fi
 
 # bankup vimrc

@@ -240,9 +240,7 @@ let g:coc_global_extensions = [
     \ 'coc-highlight',
     \ 'coc-snippets',
     \ 'coc-pairs',
-    \ 'coc-phpls',
     \ 'coc-markdownlint',
-    \ 'coc-docker',
     \]
 " Use deoplete.
 syntax on
