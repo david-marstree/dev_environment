@@ -19,7 +19,6 @@ if [ ! -e $HOME/.vim/autoload/pathogen.vim ]
 then
 	curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 	git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/bundle
-
 fi
 
 if [ ! -d $HOME/.pack/plugins/start/vim-tmux-navigator ]
@@ -59,11 +58,13 @@ brew install koekeishiya/formulae/skhd
 npm install -g prettier
 
 mkdir ~/.config
-cp -rf skhd ~/.config
-cp -rf yabai ~/.config
+ln -s skhd ~/.config
+ln -s yabai ~/.config
 
-brew services restart yabai
-brew services restart skhd
+#brew services restart yabai
+yabai --start-service
+#brew services restart skhd
+skhd --start-service
 
 echo "Finish"
 exit 0
