@@ -92,4 +92,6 @@ ctrl - 5 : yabai -m space --focus 15; yabai -m space --focus 5;
 alt + shift - left : yabai -m window --ratio abs:0.25;
 alt + shift - right : yabai -m window --ratio abs:0.75;
 
+# reset screens
+shift + alt + escape : bash ~/www/dev_environment/reset_monitor.sh
 
