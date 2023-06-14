@@ -169,7 +169,7 @@ imap <C-x>   <Cmd>call codeium#Clear()<CR>
 set mouse=a
 set re=0
 set encoding=UTF-8
-set showtabline=2
+set showtabline=1
 set number
 set showcmd
 set shortmess+=c
@@ -180,6 +180,7 @@ set cindent
 set list lcs=tab:\|\ " (here is a space)
 set nowrap
 
+let g:tablineclosebutton=1
 let g:prettier#config#prose_wrap = 'never'
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeWinPos="left"
@@ -244,6 +245,7 @@ let g:ale_set_loclist = 0
 "autocmd BufWritePre *.{js,jsx,ts,tsx} :syntax sync clear
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php :PrettierAsync
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php :syntax enable
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php :syntax on
 
 " Less compile
 autocmd FileWritePost,BufWritePost *.less :call LessCSSCompress()
@@ -257,3 +259,4 @@ endfunction
 
 " Command for Rg
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number -g \"!{node_modules/*,.git/*}\" --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
