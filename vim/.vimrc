@@ -111,6 +111,7 @@ imap jk <C-[><CR>
 :nnoremap <leader>mp :MarkdownPreview<CR>
 :nnoremap <leader><left> :vertical resize+5 <CR>
 :nnoremap <leader><right> :vertical resize-5 <CR>
+:nnoremap <leader>rr :syntax on<CR>
 " Clipboard copy and paste
 :nnoremap <leader>p :r !pbpaste<CR>
 :nnoremap <C-v> :r !pbpaste<CR>
