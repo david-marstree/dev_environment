@@ -175,6 +175,7 @@ set number
 set showcmd
 set shortmess+=c
 set shiftwidth=2
+set tabstop=2
 set autoindent
 set smartindent
 set cindent
@@ -220,7 +221,6 @@ let g:coc_global_extensions = [
     \ 'coc-css',
     \ 'coc-highlight',
     \ 'coc-snippets',
-    \ 'coc-pairs',
     \ 'coc-markdownlint',
     \]
 syntax on

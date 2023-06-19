@@ -93,5 +93,4 @@ alt + shift - left : yabai -m window --ratio abs:0.25;
 alt + shift - right : yabai -m window --ratio abs:0.75;
 
 # reset screens
-shift + alt + escape : bash ~/www/dev_environment/reset_monitor.sh
-
+# shift + alt + escape : bash ~/www/dev_environment/reset_monitor.sh
