@@ -55,7 +55,7 @@ call plug#begin('~/.vim/plugged')
   "Vim floaterm
   Plug 'voldikss/vim-floaterm'
   " Deoplete
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   " Vim lsp support
   Plug 'prabirshrestha/vim-lsp'
   " Easy lsp server installation
@@ -65,7 +65,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'
   Plug 'ap/vim-css-color'
   " Plug 'lilydjwg/colorizer'
-  Plug 'dense-analysis/ale'
+  " Plug 'dense-analysis/ale'
   "Markdown
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
@@ -224,22 +224,22 @@ let g:coc_global_extensions = [
     \ 'coc-markdownlint',
     \]
 syntax on
-let g:ale_linters = {
-      \   'html': ['htmlhint'],
-      \   'css': ['stylelint'],
-      \   'javascript': ['eslint'],
-      \   'typescript': ['eslint'],
-      \   'markdown': ['markdownlint'],
-      \   'DockerFile': ['dockerfile_lint'],
-      \   'php': ['php','php_cs_fixer', 'psalm' ],
-      \}
-let g:ale_linters_explicit = 1
-let g:ale_completion_enable = 1
-let g:ale_completion_autoimport = 1
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-let g:ale_set_loclist = 0
+" let g:ale_linters = {
+"       \   'html': ['htmlhint'],
+"       \   'css': ['stylelint'],
+"       \   'javascript': ['eslint'],
+"       \   'typescript': ['eslint'],
+"       \   'markdown': ['markdownlint'],
+"       \   'DockerFile': ['dockerfile_lint'],
+"       \   'php': ['php','php_cs_fixer', 'psalm' ],
+"       \}
+" let g:ale_linters_explicit = 1
+" let g:ale_completion_enable = 1
+" let g:ale_completion_autoimport = 1
+" let g:ale_sign_column_always = 1
+" let g:ale_sign_error = '>>'
+" let g:ale_sign_warning = '--'
+" let g:ale_set_loclist = 0
 
 " javscript React typescript
 "autocmd BufWritePre *.{js,jsx,ts,tsx} :syntax sync fromstart
