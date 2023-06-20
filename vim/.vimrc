@@ -78,13 +78,6 @@ call plug#begin('~/.vim/plugged')
   " Easy lsp server installation
   Plug 'mattn/vim-lsp-settings'
   
-  "Javascript React typescript
-"  Plug 'pangloss/vim-javascript'
-"  Plug 'leafgarland/typescript-vim'
-"  Plug 'peitalin/vim-jsx-typescript'
-"  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-"  Plug 'jparise/vim-graphql'
-
   "HTML
   Plug 'docunext/closetag.vim'
   Plug 'mattn/emmet-vim'
@@ -240,29 +233,9 @@ let g:coc_global_extensions = [
     \ 'coc-css',
     \ 'coc-highlight',
     \ 'coc-snippets',
-    \ 'coc-pairs',
     \ 'coc-markdownlint',
     \]
-" Use deoplete.
 syntax on
-"let g:deoplete#enable_at_startup = 1
-" call ale#linter#Define('php', {
-" \   'name': 'intelephense',
-" \   'lsp': 'stdio',
-" \   'executable': 'intelephense',
-" \   'command': '%e --stdio',
-" \   'project_root': function('ale_linters#php#langserver#GetProjectRoot')
-" \ })
-" let g:ale_fixers = {
-"       \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-"       \   'html': ['prettier'],
-"       \   'css': ['stylelint'],
-"       \   'javascript': ['eslint', 'prettier'],
-"       \   'typescript': ['eslint', 'prettier'],
-"       \   'markdown': ['markdownlint'],
-"       \   'DockerFile': ['dockerfile_lint'],
-"       \   'php': ['php_cs_fixer'],
-"       \}
 let g:ale_linters = {
       \   'html': ['htmlhint'],
       \   'css': ['stylelint'],
