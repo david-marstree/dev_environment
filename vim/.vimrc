@@ -7,72 +7,55 @@ call plug#begin('~/.vim/plugged')
   " Airline
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-
   " CtrlP
   Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
   " split window
   Plug 'christoomey/vim-tmux-navigator'
-
   " Polyglot
   Plug 'sheerun/vim-polyglot'
   " Startup Page
   Plug 'mhinz/vim-startify'
-
   " Nerdtree
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
-
   " NERD Commenter
   Plug 'scrooloose/nerdcommenter'
   Plug 'itchyny/lightline.vim'
   Plug 'tpope/vim-commentary'
-
   " Surround
   Plug 'tpope/vim-surround'
-
   " Line number
   Plug 'myusuf3/numbers.vim'
-
   " dark theme
   Plug 'danilo-augusto/vim-afterglow'
   " Tabline
   Plug 'mkitt/tabline.vim'
-
   " Syntastic
   Plug 'tpope/vim-fugitive'
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'airblade/vim-gitgutter'
-
   " FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-
   " Compiles your less files on the fly
   Plug 'groenewege/vim-less'
-
   " Prettier
   Plug 'prettier/vim-prettier', { 'do': 'yarn add', 'for': ['javascript', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html', 'php'] }
-
   "search and highlight
   Plug 'markonm/traces.vim'
   Plug 'haya14busa/incsearch.vim'
   " IndentLine
   Plug 'yggdroot/indentline'
-
   " COC
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
   " Codium AI for coding suggestion
   Plug 'Exafunction/codeium.vim'
-
   "tagbar
   Plug 'majutsushi/tagbar'
-
   "Vim floaterm
   Plug 'voldikss/vim-floaterm'
-  
   " Deoplete
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   " Vim lsp support
   Plug 'prabirshrestha/vim-lsp'
   " Easy lsp server installation
@@ -83,20 +66,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'
   Plug 'ap/vim-css-color'
   " Plug 'lilydjwg/colorizer'
-  Plug 'dense-analysis/ale'
-
+  " Plug 'dense-analysis/ale'
   "Markdown
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-
 call plug#end()
-
-
 packloadall
-
-let g:ctrlp_custom_ignore = {
- \ 'dir': '\.git$\|\.yardoc\|bower_components|node_modules|public$|log\|tmp$',
- \ 'file': '\.so$\|\.dat$|\.DS_Store$'
- \ }
 
 " Vundle
 " set the runtime path to include Vundle and initialize
@@ -109,6 +83,10 @@ call vundle#begin()
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+let g:ctrlp_custom_ignore = {
+ \ 'dir': '\.git$\|\.yardoc\|bower_components|node_modules|public$|log\|tmp$',
+ \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+ \ }
 call pathogen#infect()
 "" Key Commands
 let mapleader = " "
@@ -134,13 +112,14 @@ imap jk <C-[><CR>
 :nnoremap <leader>mp :MarkdownPreview<CR>
 :nnoremap <leader><left> :vertical resize+5 <CR>
 :nnoremap <leader><right> :vertical resize-5 <CR>
+:nnoremap <leader>rr :syntax on<CR>
 " Clipboard copy and paste
 :nnoremap <leader>p :r !pbpaste<CR>
 :nnoremap <C-v> :r !pbpaste<CR>
 :xnoremap <leader>y :%w !pbcopy<CR>
 :xnoremap <C-y> :%w !pbcopy<CR>
 
-"" function typescript
+" function typescript
 nmap <C-s> :w<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
@@ -172,29 +151,39 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+" COC
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-" Codiums
-let g:codium_disable_bingings = 1
+" Codeium
+let g:codeium_disable_bindings = 1
 let g:codeium_no_map_tab = 1
-imap <script><silent><nowait><expr> <C-i> codeium#Accept()
-imap <M-]>   <Cmd>call codeium#CycleCompletions(1)<CR>
-imap <M-[>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+imap <script><silent><nowait><expr> <C-g> codeium#Accept()
+imap <C-;>   <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <C-,>   <Cmd>call codeium#CycleCompletions(-1)<CR>
 imap <C-x>   <Cmd>call codeium#Clear()<CR>
 
 set mouse=a
 set re=0
 set encoding=UTF-8
-set showtabline=2
+set showtabline=1
 set number
 set showcmd
 set shortmess+=c
 set shiftwidth=2
+set tabstop=2
 set autoindent
 set smartindent
 set cindent
 set list lcs=tab:\|\ " (here is a space)
 set nowrap
 
+let g:tablineclosebutton=1
 let g:prettier#config#prose_wrap = 'never'
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeWinPos="left"
@@ -223,7 +212,7 @@ let g:user_emmet_leader_key=','
 
 colorscheme afterglow
 let g:airline_theme='afterglow'
-
+let g:airline_section_y = '{...}%3{codeium#GetStatusString()}'
 let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-eslint',
@@ -236,31 +225,29 @@ let g:coc_global_extensions = [
     \ 'coc-markdownlint',
     \]
 syntax on
-let g:ale_linters = {
-      \   'html': ['htmlhint'],
-      \   'css': ['stylelint'],
-      \   'javascript': ['eslint'],
-      \   'typescript': ['eslint'],
-      \   'markdown': ['markdownlint'],
-      \   'DockerFile': ['dockerfile_lint'],
-      \   'php': ['php','php_cs_fixer', 'psalm' ],
-      \}
-let g:ale_linters_explicit = 1
-" let g:ale_fix_on_save = 1
-let g:ale_completion_enable = 1
-let g:ale_completion_autoimport = 1
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-let g:ale_set_loclist = 0
-" let g:ale_set_quickfix = 1
-
+" let g:ale_linters = {
+"       \   'html': ['htmlhint'],
+"       \   'css': ['stylelint'],
+"       \   'javascript': ['eslint'],
+"       \   'typescript': ['eslint'],
+"       \   'markdown': ['markdownlint'],
+"       \   'DockerFile': ['dockerfile_lint'],
+"       \   'php': ['php','php_cs_fixer', 'psalm' ],
+"       \}
+" let g:ale_linters_explicit = 1
+" let g:ale_completion_enable = 1
+" let g:ale_completion_autoimport = 1
+" let g:ale_sign_column_always = 1
+" let g:ale_sign_error = '>>'
+" let g:ale_sign_warning = '--'
+" let g:ale_set_loclist = 0
 
 " javscript React typescript
 "autocmd BufWritePre *.{js,jsx,ts,tsx} :syntax sync fromstart
 "autocmd BufWritePre *.{js,jsx,ts,tsx} :syntax sync clear
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php :PrettierAsync
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php :syntax enable
+autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php :syntax enable
+autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php :syntax on
 
 " Less compile
 autocmd FileWritePost,BufWritePost *.less :call LessCSSCompress()
@@ -274,3 +261,4 @@ endfunction
 
 " Command for Rg
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number -g \"!{node_modules/*,.git/*}\" --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
