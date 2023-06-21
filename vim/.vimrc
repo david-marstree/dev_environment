@@ -14,11 +14,10 @@ set autoindent
 set smartindent
 set cindent
 set list lcs=tab:\|\ " (here is a space)
-set nowrap
+set nowrap 
+set backspace=indent,eol,start
 syntax on
 filetype off                  " required
-filetype indent on    " required
-filetype plugin indent on    " required
 packloadall
 
 
@@ -73,11 +72,9 @@ call vundle#begin()
   Plugin 'google/vim-maktaba'
   Plugin 'google/vim-codefmt'
   Plugin 'google/vim-glaive'
+	Plugin 'frazrepo/vim-rainbow'
 call vundle#end()            " required
 call glaive#Install()
-
-
-
 
 
 " Key mapping
@@ -119,6 +116,8 @@ imap <C-,>   <Cmd>call codeium#CycleCompletions(-1)<CR>
 imap <C-x>   <Cmd>call codeium#Clear()<CR>
 nmap <F7> :FloatermNew! lazygit<CR>
 nmap <F6> :FloatermNew --cmd="/bin/bash"<CR>
+nmap <F6> :FloatermNew --cmd="/bin/bash"<CR>
+nmap <F5> :call rainbow#toggle()<CR>
 nnoremap <leader>fx :FloatermKill<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -182,8 +181,19 @@ let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\
 let g:user_emmet_install_global = 0
 let g:tagalong_verbose= 1
 let g:user_emmet_leader_key=','
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ [ '*.{php,js,jsx,ts,tsx,less,json}' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ ]
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
 " Auto command
+autocmd FileType html,htm,php,css,less,scss,js,jsx,typescript,typescriptreact,md,mdx,graphql,graphqls :call rainbow#load()
+autocmd FileType html,htm,php,css,less,scss,js,jsx,typescript,typescriptreact,md,mdx,graphql,graphqls,.vimrc :call rainbow#enable()
 autocmd FileWritePost,BufWritePost *.less :call LessCSSCompress()
 function! LessCSSCompress()
   let cwd = expand('<afile>:p:h')
