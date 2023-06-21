@@ -15,6 +15,7 @@ set smartindent
 set cindent
 set list lcs=tab:\|\ " (here is a space)
 set nowrap 
+set noswapfile
 set backspace=indent,eol,start
 syntax on
 filetype off                  " required
