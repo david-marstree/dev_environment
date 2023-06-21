@@ -193,7 +193,6 @@ let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
 " Auto command
 autocmd FileType html,htm,php,css,less,scss,js,jsx,typescript,typescriptreact,md,mdx,graphql,graphqls :call rainbow#load()
-autocmd FileType html,htm,php,css,less,scss,js,jsx,typescript,typescriptreact,md,mdx,graphql,graphqls,.vimrc :call rainbow#enable()
 autocmd FileWritePost,BufWritePost *.less :call LessCSSCompress()
 function! LessCSSCompress()
   let cwd = expand('<afile>:p:h')

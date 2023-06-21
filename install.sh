@@ -41,14 +41,14 @@ then
 fi
 
 # Install vim-indent-rainbow
-if [ ! -e $HOME/.vim/autoload/rainbow.vim ]
-then
-	curl -fLo $HOME/.vim/autoload/rainbow.vim --create-dirs https://raw.githubusercontent.com/adi/vim-indent-rainbow/main/autoload/rainbow.vim;
-fi
-if [ ! -e $HOME/.vim/autoload/togglerb.vim ]
-then
-	curl -fLo $HOME/.vim/autoload/tooglerb.vim --create-dirs https://raw.githubusercontent.com/adi/vim-indent-rainbow/main/autoload/togglerb.vim;
-fi
+# if [ ! -e $HOME/.vim/autoload/rainbow.vim ]
+# then
+# 	curl -fLo $HOME/.vim/autoload/rainbow.vim --create-dirs https://raw.githubusercontent.com/adi/vim-indent-rainbow/main/autoload/rainbow.vim;
+# fi
+# if [ ! -e $HOME/.vim/autoload/togglerb.vim ]
+# then
+# 	curl -fLo $HOME/.vim/autoload/tooglerb.vim --create-dirs https://raw.githubusercontent.com/adi/vim-indent-rainbow/main/autoload/togglerb.vim;
+# fi
 
 # bankup vimrc
 if [ -e $HOME/.vimrc ]
