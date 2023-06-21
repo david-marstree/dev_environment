@@ -21,6 +21,9 @@ filetype indent on    " required
 filetype plugin indent on    " required
 packloadall
 
+
+
+
 " Vim Plug
 call plug#begin('~/.vim/plugged')
   " Display tools
@@ -55,9 +58,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'docunext/closetag.vim'
   Plug 'mattn/emmet-vim'
   Plug 'ap/vim-css-color'
-
-  
 call plug#end()
+
+
+
 
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -73,6 +77,9 @@ call vundle#end()            " required
 call glaive#Install()
 
 
+
+
+
 " Key mapping
 let mapleader = " "
 map /  <Plug>(incsearch-forward)
@@ -81,38 +88,38 @@ map g/ <Plug>(incsearch-stay)
 imap jk <C-[><CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <C-s> :w<CR>
-:nnoremap <leader>e :NERDTreeToggle <CR>
-:nnoremap <leader>to :tabnew <CR>
-:nnoremap <leader>tx :tabclose <CR>
-:nnoremap <leader>tn :tabnext <CR>
-:nnoremap <leader>tp :tabprevious <CR>
-:nnoremap <leader>tg1 :tabn 1<CR>
-:nnoremap <leader>tg2 :tabn 2<CR>
-:nnoremap <leader>tg3 :tabn 3<CR>
-:nnoremap <leader>tg4 :tabn 4<CR>
-:nnoremap <leader>tg5 :tabn 5<CR>
-:nnoremap <leader>tg6 :tabn 6<CR>
-:nnoremap <leader>tg7 :tabn 7<CR>
-:nnoremap <leader>tg8 :tabn 8<CR>
-:nnoremap <leader>tg9 :tabn 9<CR>
-:nnoremap <leader>sv :vsp<CR>
-:nnoremap <leader>sx :close<CR>
-:nnoremap <leader>ff :FZF <CR>
-:nnoremap <leader>fs :Rg <CR>
-:nnoremap <leader><left> :vertical resize+5 <CR>
-:nnoremap <leader><right> :vertical resize-5 <CR>
-:nnoremap <leader>rr :syntax on<CR>
-:nnoremap <leader>p :r !pbpaste<CR>
-:nnoremap <C-v> :r !pbpaste<CR>
-:xnoremap <leader>y :%w !pbcopy<CR>
-:xnoremap <C-y> :%w !pbcopy<CR>
+nnoremap <leader>e :NERDTreeToggle <CR>
+nnoremap <leader>to :tabnew <CR>
+nnoremap <leader>tx :tabclose <CR>
+nnoremap <leader>tn :tabnext <CR>
+nnoremap <leader>tp :tabprevious <CR>
+nnoremap <leader>tg1 :tabn 1<CR>
+nnoremap <leader>tg2 :tabn 2<CR>
+nnoremap <leader>tg3 :tabn 3<CR>
+nnoremap <leader>tg4 :tabn 4<CR>
+nnoremap <leader>tg5 :tabn 5<CR>
+nnoremap <leader>tg6 :tabn 6<CR>
+nnoremap <leader>tg7 :tabn 7<CR>
+nnoremap <leader>tg8 :tabn 8<CR>
+nnoremap <leader>tg9 :tabn 9<CR>
+nnoremap <leader>sv :vsp<CR>
+nnoremap <leader>sx :close<CR>
+nnoremap <leader>ff :GFiles <CR>
+nnoremap <leader>fs :Rg <CR>
+nnoremap <leader><left> :vertical resize+5 <CR>
+nnoremap <leader><right> :vertical resize-5 <CR>
+nnoremap <leader>rr :syntax on<CR>
+nnoremap <leader>p :r !pbpaste<CR>
+nnoremap <C-v> :r !pbpaste<CR>
+xnoremap <leader>y :%w !pbcopy<CR>
+xnoremap <C-y> :%w !pbcopy<CR>
 imap <script><silent><nowait><expr> <C-g> codeium#Accept()
 imap <C-;>   <Cmd>call codeium#CycleCompletions(1)<CR>
 imap <C-,>   <Cmd>call codeium#CycleCompletions(-1)<CR>
 imap <C-x>   <Cmd>call codeium#Clear()<CR>
 nmap <F7> :FloatermNew! lazygit<CR>
 nmap <F6> :FloatermNew --cmd="/bin/bash"<CR>
-:nnoremap <leader>fx :FloatermKill<CR>
+nnoremap <leader>fx :FloatermKill<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
@@ -131,6 +138,8 @@ inoremap <silent><expr> <TAB>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+
 
 
 " Plugin Setting
@@ -197,4 +206,4 @@ augroup autoformat_settings
   autocmd FileType swift AutoFormatBuffer swift-format
 augroup END
 
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number -g \"!{node_modules/*,.git/*}\" --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-ignore-vcs --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)

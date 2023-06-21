@@ -7,6 +7,9 @@ brew install tmux
 brew install koekeishiya/formulae/yabai
 # Install SKHD
 brew install koekeishiya/formulae/skhd
+# Install fzf and ripgrep
+brew install fzf
+brew install ripgrep
 
 # Install Prettier and js-beautify
 sudo npm install -g prettier
