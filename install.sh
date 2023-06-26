@@ -10,6 +10,7 @@ brew install koekeishiya/formulae/skhd
 # Install fzf and ripgrep
 brew install fzf
 brew install ripgrep
+brew install ag
 
 # Install Prettier and js-beautify
 sudo npm install -g prettier

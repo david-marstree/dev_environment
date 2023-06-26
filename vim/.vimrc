@@ -40,6 +40,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'markonm/traces.vim' " highlight when search and replace
   Plug 'voldikss/vim-floaterm' " floating window
   Plug 'airblade/vim-gitgutter' " git diff tip
+	Plug 'tpope/vim-fugitive' "git command
 	" Control Panel
   Plug 'christoomey/vim-tmux-navigator' " jump to another windows
   Plug 'scrooloose/nerdtree' " file explorer tree
@@ -102,8 +103,8 @@ nnoremap <leader>tg8 :tabn 8<CR>
 nnoremap <leader>tg9 :tabn 9<CR>
 nnoremap <leader>sv :vsp<CR>
 nnoremap <leader>sx :close<CR>
-nnoremap <leader>ff :GFiles <CR>
-nnoremap <leader>fs :Rg <CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fs :Rg<CR>
 nnoremap <leader><left> :vertical resize+5 <CR>
 nnoremap <leader><right> :vertical resize-5 <CR>
 nnoremap <leader>rr :syntax on<CR>
@@ -189,6 +190,7 @@ let g:rainbow_load_separately = [
     \ ]
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " Auto command
 autocmd FileType css,less,scss,js,jsx,typescript,typescriptreact :call rainbow#load()
