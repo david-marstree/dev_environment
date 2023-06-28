@@ -16,10 +16,13 @@ set cindent
 set list lcs=tab:\|\ " (here is a space)
 set nowrap 
 set noswapfile
+set autoread
 set backspace=indent,eol,start
 syntax on
 filetype off                  " required
 packloadall
+
+
 
 
 
@@ -55,10 +58,11 @@ call plug#begin('~/.vim/plugged')
 	" Autocomplete
   Plug 'Exafunction/codeium.vim' " Codeium AI
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " auto complete
-	" HTML Coding
-  Plug 'docunext/closetag.vim'
-  Plug 'mattn/emmet-vim'
-  Plug 'ap/vim-css-color'
+	" Coding
+  Plug 'docunext/closetag.vim' " auto close tag for HTML
+  Plug 'mattn/emmet-vim' " emmet for HTML
+  Plug 'ap/vim-css-color' " css color preview
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown preview
 call plug#end()
 
 
@@ -69,12 +73,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   " let Vundle manage Vundle, required
   Plugin 'VundleVim/Vundle.vim'
-  Plugin 'groenewege/vim-less'
+  Plugin 'groenewege/vim-less' " auto compile less
   Plugin 'ludovicchabant/vim-gutentags'
-  Plugin 'google/vim-maktaba'
-  Plugin 'google/vim-codefmt'
-  Plugin 'google/vim-glaive'
-	Plugin 'frazrepo/vim-rainbow'
+  Plugin 'google/vim-maktaba' "google formatter
+  Plugin 'google/vim-codefmt' "google formatter
+  Plugin 'google/vim-glaive' "google formatter continue
+	Plugin 'frazrepo/vim-rainbow' "rainbow brackets
+  Plugin 'godlygeek/tabular' "tabular for markdown
+  Plugin 'preservim/vim-markdown' "markdown plugin
 call vundle#end()            " required
 call glaive#Install()
 
@@ -141,9 +147,9 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 
 
-
-" Plugin Setting
+" Color scheme
 colorscheme afterglow
+" Plugin Setting
 let g:startify_custom_header = [
 \'  $$\      $$\  $$$$$$\  $$$$$$$\   $$$$$$\    $$\',
 \'  $$$\    $$$ |$$  __$$\ $$  __$$\ $$  __$$\   $$ |',
@@ -174,8 +180,7 @@ let g:coc_global_extensions = [
     \ 'coc-css',
     \ 'coc-highlight',
     \ 'coc-snippets',
-    \ 'coc-markdownlint',
-    \ 'coc-prettier',
+		\ 'coc-prettier',
     \]
 let g:typescript_indent_disable = 1
 let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'
@@ -191,6 +196,16 @@ let g:rainbow_load_separately = [
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal_code_blocks = 0
+let g:markdown_fenced_languages = [
+			\'html', 
+			\'python', 
+			\'bash=sh', 
+			\'typescript', 
+			\'javascript'
+			\]
+
 
 " Auto command
 autocmd FileType css,less,scss,js,jsx,typescript,typescriptreact :call rainbow#load()
@@ -203,8 +218,8 @@ function! LessCSSCompress()
   endif
 endfunction
 
-autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php :syntax enable
-autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.php :syntax on
+autocmd BufWritePost *.php :syntax enable
+autocmd BufWritePost *.php :syntax on
 autocmd FileType typescript :set makeprg=tsc
 autocmd FileType html,css EmmetInstall
 
