@@ -91,6 +91,10 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 imap jk <C-[><CR>
+nnoremap K :m .-2<CR>==
+nnoremap J :m .+1<CR>==
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
 nmap <F8> :TagbarToggle<CR>
 nmap <C-s> :w<CR>
 nnoremap <leader>e :NERDTreeToggle <CR>
@@ -123,7 +127,6 @@ imap <C-;>   <Cmd>call codeium#CycleCompletions(1)<CR>
 imap <C-,>   <Cmd>call codeium#CycleCompletions(-1)<CR>
 imap <C-x>   <Cmd>call codeium#Clear()<CR>
 nmap <F7> :FloatermNew! lazygit<CR>
-nmap <F6> :FloatermNew --cmd="/bin/bash"<CR>
 nmap <F6> :FloatermNew --cmd="/bin/bash"<CR>
 nnoremap <leader>fx :FloatermKill<CR>
 nmap <silent> gd <Plug>(coc-definition)
