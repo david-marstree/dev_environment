@@ -179,6 +179,7 @@ let g:coc_global_extensions = [
     \ 'coc-highlight',
     \ 'coc-snippets',
 		\ 'coc-prettier',
+    \ '@yaegassy/coc-tailwindcss3',
     \]
 let g:typescript_indent_disable = 1
 let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'
@@ -206,6 +207,7 @@ let g:markdown_fenced_languages = [
 
 
 " Auto command
+au FileType html,javascript,typescript,typescriptreact let b:coc_root_patterns = ['.git', '.env', 'tailwind.config.js', 'tailwind.config.cjs']
 autocmd FileType css,less,scss,js,jsx,typescript,typescriptreact :call rainbow#load()
 autocmd FileWritePost,BufWritePost *.less :call LessCSSCompress()
 function! LessCSSCompress()
@@ -230,3 +232,4 @@ augroup autoformat_settings
 augroup END
 
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-ignore-vcs --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
