@@ -81,6 +81,7 @@ call vundle#begin()
 	Plugin 'frazrepo/vim-rainbow' "rainbow brackets
   Plugin 'godlygeek/tabular' "tabular for markdown
   Plugin 'preservim/vim-markdown' "markdown plugin
+	Plugin 'hushicai/tagbar-javascript.vim' "tagbar for javascript
 call vundle#end()            " required
 call glaive#Install()
 

@@ -15,6 +15,7 @@ brew install ag
 # Install Prettier and js-beautify
 sudo npm install -g prettier
 sudo npm install -g js-beautify
+sudo npm install -g esctags
 
 # Install Vim-plug
 if [ ! -e $HOME/.vim/autoload/plug.vim ]
