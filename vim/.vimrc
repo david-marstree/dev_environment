@@ -116,7 +116,7 @@ nnoremap <leader>tg9 :tabn 9<CR>
 nnoremap <leader>sv :vsp<CR>
 nnoremap <leader>sx :close<CR>
 nnoremap <leader>ff :Files<CR>
-nnoremap <leader>fs :Rg<CR>
+nnoremap <leader>fs :Ag<CR>
 nnoremap <leader><left> :vertical resize+5 <CR>
 nnoremap <leader><right> :vertical resize-5 <CR>
 nnoremap <leader>rr :syntax on<CR>
