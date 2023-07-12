@@ -55,6 +55,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'groenewege/vim-less' " auto compile less
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " file searching
   Plug 'junegunn/fzf.vim' " file searching continue
+	Plug 'gilsondev/searchtasks.vim' " search Task comment TODO, FIXME, XXX
 	" Autocomplete
   Plug 'Exafunction/codeium.vim' " Codeium AI
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " auto complete
@@ -205,7 +206,7 @@ let g:markdown_fenced_languages = [
 			\'typescript', 
 			\'javascript'
 			\]
-
+let g:searchtasks_list=["TODO", "FIXME", "XXX"]
 
 " Auto command
 au FileType html,javascript,typescript,typescriptreact let b:coc_root_patterns = ['.git', '.env', 'tailwind.config.js', 'tailwind.config.cjs']
