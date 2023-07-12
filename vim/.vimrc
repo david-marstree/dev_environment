@@ -18,6 +18,7 @@ set nowrap
 set noswapfile
 set autoread
 set backspace=indent,eol,start
+set foldlevel=99 "Open all folds
 syntax on
 filetype off                  " required
 packloadall
@@ -56,6 +57,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " file searching
   Plug 'junegunn/fzf.vim' " file searching continue
 	Plug 'gilsondev/searchtasks.vim' " search Task comment TODO, FIXME, XXX
+	Plug 'easymotion/vim-easymotion' "easymotion
+	Plug 'pseewald/vim-anyfold' "anyfold
 	" Autocomplete
   Plug 'Exafunction/codeium.vim' " Codeium AI
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " auto complete
@@ -224,6 +227,7 @@ autocmd BufWritePost *.php :syntax enable
 autocmd BufWritePost *.php :syntax on
 autocmd FileType typescript :set makeprg=tsc
 autocmd FileType html,css EmmetInstall
+autocmd FileType * AnyFoldActivate
 
 augroup autoformat_settings
   autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
