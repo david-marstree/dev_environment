@@ -212,7 +212,6 @@ let g:markdown_fenced_languages = [
 let g:searchtasks_list=["TODO", "FIXME", "XXX"]
 
 " Auto command
-" au FileType html,javascript,typescript,typescriptreact let b:coc_root_patterns = ['.git', '.env', 'tailwind.config.js', 'tailwind.config.cjs']
 autocmd FileType css,less,scss,js,jsx,typescript,typescriptreact :call rainbow#load()
 autocmd FileWritePost,BufWritePost *.less :call LessCSSCompress()
 function! LessCSSCompress()
