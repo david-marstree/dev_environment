@@ -11,6 +11,7 @@ brew install koekeishiya/formulae/skhd
 brew install fzf
 brew install ripgrep
 brew install ag
+brew install code-minimap
 
 # Install Prettier and js-beautify
 sudo npm install -g prettier

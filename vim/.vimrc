@@ -49,6 +49,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'christoomey/vim-tmux-navigator' " jump to another windows
   Plug 'scrooloose/nerdtree' " file explorer tree
   Plug 'majutsushi/tagbar'  " F8 to show function list
+	Plug 'wfxr/minimap.vim' "minimap
 	" Functions
   Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' } " search tag
   Plug 'tpope/vim-commentary' " comment function
@@ -210,6 +211,9 @@ let g:markdown_fenced_languages = [
 			\'javascript'
 			\]
 let g:searchtasks_list=["TODO", "FIXME", "XXX"]
+let g:minimap_width = 10
+let g:minimap_auto_start = 1
+
 
 " Auto command
 autocmd FileType css,less,scss,js,jsx,typescript,typescriptreact :call rainbow#load()
