@@ -67,6 +67,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim' " emmet for HTML
   Plug 'ap/vim-css-color' " css color preview
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown preview
+	Plug 'mxw/vim-jsx' " jsx syntax
 call plug#end()
 
 
@@ -184,7 +185,7 @@ let g:coc_global_extensions = [
     \ 'coc-highlight',
     \ 'coc-snippets',
 		\ 'coc-prettier',
-    \ '@yaegassy/coc-tailwindcss3',
+    " \ '@yaegassy/coc-tailwindcss3',
     \]
 let g:typescript_indent_disable = 1
 let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'
@@ -212,7 +213,7 @@ let g:markdown_fenced_languages = [
 let g:searchtasks_list=["TODO", "FIXME", "XXX"]
 
 " Auto command
-au FileType html,javascript,typescript,typescriptreact let b:coc_root_patterns = ['.git', '.env', 'tailwind.config.js', 'tailwind.config.cjs']
+" au FileType html,javascript,typescript,typescriptreact let b:coc_root_patterns = ['.git', '.env', 'tailwind.config.js', 'tailwind.config.cjs']
 autocmd FileType css,less,scss,js,jsx,typescript,typescriptreact :call rainbow#load()
 autocmd FileWritePost,BufWritePost *.less :call LessCSSCompress()
 function! LessCSSCompress()
