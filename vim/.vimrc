@@ -19,6 +19,8 @@ set noswapfile
 set autoread
 set backspace=indent,eol,start
 set foldlevel=99 "Open all folds
+set termguicolors       " enable true colors support
+set background=dark     " dark theme
 syntax on
 filetype off                  " required
 packloadall
@@ -30,8 +32,13 @@ packloadall
 
 " Vim Plug
 call plug#begin('~/.vim/plugged')
+  Plug 'cormacrelf/vim-colors-github' "color schema github
+  Plug 'danilo-augusto/vim-afterglow' "color schema afterglow
+	Plug 'cocopon/iceberg.vim' "color schema iceberg
+  Plug 'sainnhe/edge' "color schema edge
+  Plug 'kjssad/quantum.vim' "color schema quantum
+
   " Display tools
-  Plug 'danilo-augusto/vim-afterglow' "color schema
   Plug 'mhinz/vim-startify' " start screen
   Plug 'vim-airline/vim-airline' " status bar in bottom
   Plug 'vim-airline/vim-airline-themes' "theme for status bar in bottom
