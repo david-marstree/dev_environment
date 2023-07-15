@@ -21,6 +21,12 @@ set backspace=indent,eol,start
 set foldlevel=99 "Open all folds
 set termguicolors       " enable true colors support
 set background=dark     " dark theme
+set cursorline          " highlight current line
+set statusline+=%#warningmsg#
+set statusline+=%{SyntaxStatuslineFlag()}
+set statusline+=%*
+set guicursor=i:ver25-iCursor
+
 syntax on
 filetype off                  " required
 packloadall
@@ -32,12 +38,12 @@ packloadall
 
 " Vim Plug
 call plug#begin('~/.vim/plugged')
+  " Color Scheme
   Plug 'cormacrelf/vim-colors-github' "color schema github
   Plug 'danilo-augusto/vim-afterglow' "color schema afterglow
 	Plug 'cocopon/iceberg.vim' "color schema iceberg
   Plug 'sainnhe/edge' "color schema edge
   Plug 'kjssad/quantum.vim' "color schema quantum
-
   " Display tools
   Plug 'mhinz/vim-startify' " start screen
   Plug 'vim-airline/vim-airline' " status bar in bottom
@@ -66,10 +72,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'gilsondev/searchtasks.vim' " search Task comment TODO, FIXME, XXX
 	Plug 'easymotion/vim-easymotion' "easymotion
 	Plug 'pseewald/vim-anyfold' "anyfold
+	Plug 'terryma/vim-multiple-cursors' "multiple cursors
 	" Autocomplete.vim
   Plug 'Exafunction/codeium.vim' " Codeium AI
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " auto complete
 	" Coding
+  Plug 'scrooloose/syntastic' " syntax check
   Plug 'docunext/closetag.vim' " auto close tag for HTML
   Plug 'mattn/emmet-vim' " emmet for HTML
   Plug 'ap/vim-css-color' " css color preview
@@ -217,6 +225,14 @@ let g:markdown_fenced_languages = [
 			\'javascript'
 			\]
 let g:searchtasks_list=["TODO", "FIXME", "XXX"]
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let &t_SI = "\e[6 q" " Vertical bar in insert mode
+let &t_EI = "\e[2 q" " Block in normal mode
+
+
 
 " Auto command
 autocmd FileType css,less,scss,js,jsx,typescript,typescriptreact :call rainbow#load()
