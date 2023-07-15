@@ -66,7 +66,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'gilsondev/searchtasks.vim' " search Task comment TODO, FIXME, XXX
 	Plug 'easymotion/vim-easymotion' "easymotion
 	Plug 'pseewald/vim-anyfold' "anyfold
-	" Autocomplete
+	" Autocomplete.vim
   Plug 'Exafunction/codeium.vim' " Codeium AI
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " auto complete
 	" Coding
