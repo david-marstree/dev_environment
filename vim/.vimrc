@@ -26,6 +26,11 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntaxStatuslineFlag()}
 set statusline+=%*
 set guicursor=i:ver25-iCursor
+set ignorecase
+set smartcase
+set signcolumn="yes"
+set relativenumber
+set expandtab
 
 syntax on
 filetype off                  " required
@@ -43,7 +48,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'danilo-augusto/vim-afterglow' "color schema afterglow
 	Plug 'cocopon/iceberg.vim' "color schema iceberg
   Plug 'sainnhe/edge' "color schema edge
-  Plug 'kjssad/quantum.vim' "color schema quantum
+	Plug 'lifepillar/vim-solarized8' "color schema solarized
   " Display tools
   Plug 'mhinz/vim-startify' " start screen
   Plug 'vim-airline/vim-airline' " status bar in bottom
@@ -167,7 +172,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 
 " Color scheme
-colorscheme afterglow
+colorscheme solarized8_high
 " Plugin Setting
 let g:startify_custom_header = [
 \'  $$\      $$\  $$$$$$\  $$$$$$$\   $$$$$$\    $$\',
