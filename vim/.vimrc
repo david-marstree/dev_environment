@@ -31,6 +31,7 @@ set smartcase
 set signcolumn="yes"
 set relativenumber
 set expandtab
+set clipboard+="unnamedplus"
 
 syntax on
 filetype off                  " required
@@ -208,7 +209,12 @@ let g:coc_global_extensions = [
     \]
 let g:typescript_indent_disable = 1
 let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'
-let g:user_emmet_install_global = 0
+let g:user_emmet_install_global = 1
+let g:user_emmet_settings = {
+    \   'javascript': {
+    \     'extends': 'jsx,tsx',
+    \   }
+    \ }
 let g:tagalong_verbose= 1
 let g:user_emmet_leader_key=','
 let g:rainbow_load_separately = [
