@@ -173,7 +173,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 
 " Color scheme
-colorscheme solarized8_high
+colorscheme afterglow 
 " Plugin Setting
 let g:startify_custom_header = [
 \'  $$\      $$\  $$$$$$\  $$$$$$$\   $$$$$$\    $$\',
@@ -270,5 +270,4 @@ augroup autoformat_settings
   autocmd FileType swift AutoFormatBuffer swift-format
 augroup END
 
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-ignore-vcs --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
