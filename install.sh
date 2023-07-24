@@ -1,5 +1,5 @@
 #!/bin/bash
-
+brew install neovim
 brew install source-highlight
 # Install Tmux
 brew install tmux
@@ -57,8 +57,18 @@ fi
 if [ -e $HOME/.vimrc ]
 then
 	cp -rf $HOME/.vimrc $HOME/.vimrc.backup;
+	cp -rf $HOME/plug.vim $HOME/plug.vim.backup;
 fi
 ln -s $PWD/vim/.vimrc $HOME/.vimrc;
+ln -s $PWD/vim/plug.vim $HOME/plug.vim;
+
+# backup neovim
+if [ -d $HOME/.config/nvim ]
+then
+  cp -rf $HOME/.config/nvim $HOME/.config/nvim.backup;
+fi
+ln -s $PWD/nvim $HOME/.config;
+
 
 # backup tmux.conf
 if [ -e $HOME/.tmux.conf ]
