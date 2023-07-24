@@ -1,13 +1,9 @@
 " Vim Plug
 call plug#begin('~/.vim/plugged')
   " Color Scheme
-  Plug 'projekt0n/github-nvim-theme'
-  Plug 'cormacrelf/vim-colors-github' "color schema github
   Plug 'danilo-augusto/vim-afterglow' "color schema afterglow
-	Plug 'cocopon/iceberg.vim' "color schema iceberg
   Plug 'sainnhe/edge' "color schema edge
 	Plug 'lifepillar/vim-solarized8' "color schema solarized
-  Plug 'NLKNguyen/papercolor-theme' "color schema papercolor
   " Display tools
   Plug 'mhinz/vim-startify' " start screen
   Plug 'vim-airline/vim-airline' " status bar in bottom
