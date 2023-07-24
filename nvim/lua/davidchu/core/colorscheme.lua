@@ -1,6 +1,6 @@
 -- set colorscheme
 -- in case it isnt installed
-local colorscheme = "github_dark_dimmed"
+local colorscheme = "PaperColor"
 
 local status, _ = pcall(vim.cmd, string.format("colorscheme %s", colorscheme))
 if not status then

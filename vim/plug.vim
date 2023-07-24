@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'cocopon/iceberg.vim' "color schema iceberg
   Plug 'sainnhe/edge' "color schema edge
 	Plug 'lifepillar/vim-solarized8' "color schema solarized
+  Plug 'NLKNguyen/papercolor-theme' "color schema papercolor
   " Display tools
   Plug 'mhinz/vim-startify' " start screen
   Plug 'vim-airline/vim-airline' " status bar in bottom

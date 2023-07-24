@@ -1,6 +1,9 @@
 vim.g.mapleader = " "
 local keymap = vim.keymap
 
+-- general
+keymap.set("n", "<ESC>", "<ESC>:nohlsearch<CR>")
+keymap.set("i", "jk", "<ESC>")
 -- save
 keymap.set("n", "<C-s>", ":w<CR>")
 -- clipboard copy and paste
