@@ -5,13 +5,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'sainnhe/edge' "color schema edge
 	Plug 'lifepillar/vim-solarized8' "color schema solarized
   " Display tools
-  Plug 'mhinz/vim-startify' " start screen
+  " Plug 'mhinz/vim-startify' " start screen
   Plug 'vim-airline/vim-airline' " status bar in bottom
   Plug 'vim-airline/vim-airline-themes' "theme for status bar in bottom
   Plug 'ryanoasis/vim-devicons' " nerdtree icon
   Plug 'itchyny/lightline.vim' " bottom statusbar
   Plug 'myusuf3/numbers.vim' " show line number
-  Plug 'mkitt/tabline.vim'  " tabline 
+  "Plug 'mkitt/tabline.vim'  " tabline 
   Plug 'yggdroot/indentline' "indent line
   Plug 'haya14busa/incsearch.vim' " search hightlight
   Plug 'markonm/traces.vim' " highlight when search and replace
@@ -41,9 +41,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'docunext/closetag.vim' " auto close tag for HTML
   Plug 'ap/vim-css-color' " css color preview
   Plug 'mattn/emmet-vim' " emmet for HTML
-  Plug 'norcalli/nvim-colorizer.lua' " colorizer
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown preview
 	Plug 'mxw/vim-jsx' " jsx syntax
+
+  " Neovim plugin
+  Plug 'norcalli/nvim-colorizer.lua' " colorizer
+  Plug 'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
+	Plug 'akinsho/bufferline.nvim', {'tag': 'v3.*'} " bufferline
 call plug#end()
 
 " Vundle

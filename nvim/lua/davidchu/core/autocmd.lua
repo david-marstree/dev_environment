@@ -53,3 +53,8 @@ vim.cmd([[
   autocmd BufWritePost *.php :syntax on
   autocmd FileType typescript :set makeprg=tsc
 ]])
+
+-- bufferline
+vim.cmd([[
+  autocmd FileType * :source ~/.config/nvim/lua/davidchu/plugins/bufferline.lua
+]])
