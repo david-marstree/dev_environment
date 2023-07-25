@@ -21,7 +21,7 @@ keymap.set("n", "<leader>tx", ":tabclose <CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabnext <CR>") -- next tab
 keymap.set("n", "<leader>tp", ":tabprevious <CR>") -- previous tab
 for i = 1, 9 do
-  keymap.set("n", "<leader>tg" .. i, ":tabn " .. i .. "<CR>")
+  keymap.set("n", "<leader>" .. i, ":tabn " .. i .. "<CR>")
 end
 
 -- window management

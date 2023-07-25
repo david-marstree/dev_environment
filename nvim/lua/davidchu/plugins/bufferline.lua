@@ -16,8 +16,6 @@ bufferline.setup({
     numbers = "ordinal",
     modified_icon = "",
     close_icon = "",
-    always_show_bufferline = true,
-    enforce_regular_tabs = true,
     show_buffer_close_icons = true,
     mapping = false
   }
