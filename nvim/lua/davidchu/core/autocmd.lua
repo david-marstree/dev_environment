@@ -42,6 +42,11 @@ vim.cmd([[
   autocmd FileType * :ColorizerAttachToBuffer
 ]])
 
+-- tailwindCSS
+vim.cmd([[
+  autocmd FileType html,javascript,typescript,typescriptreact,css,less let b:coc_root_patterns = ['.git', '.env', 'tailwind.config.js', 'tailwind.config.cjs']
+]])
+
 -- other autocmd
 vim.cmd([[
   autocmd BufWritePost *.php :syntax enable
