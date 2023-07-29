@@ -45,6 +45,7 @@ keymap.set("n", "<leader>fx", ":FloatermKill<CR>")
 -- tagbar
 keymap.set("n", "<F8>", ":TagbarToggle<CR>")
 
+
 -- coc
 vim.cmd([[
   nmap <silent> gd <Plug>(coc-definition)

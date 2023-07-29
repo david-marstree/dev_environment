@@ -1,7 +1,7 @@
 -- Auto command
 -- rainbow load
 vim.cmd([[
-  autocmd FileType css,less,scss,js,jsx,typescript,typescriptreact :call rainbow#load()
+  autocmd bufReadPre,FileReadPre *.css,*.less,*.scss,*.js,*.jsx,*.typescript,*.typescriptreact :call rainbow#load()
 ]])
 
 -- less compress
@@ -18,7 +18,7 @@ vim.cmd([[
 
 -- EmmetInstall
 vim.cmd([[
-  autocmd FileType html,css EmmetInstall
+  autocmd bufReadPre,FileReadPre *.html,*.css EmmetInstall
 ]])
 
 -- Any Fold Activate 
@@ -27,24 +27,24 @@ vim.cmd([[
 ]])
 
 -- Auto format
-vim.cmd([[
-  augroup autoformat_settings
-    autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
-    autocmd FileType java AutoFormatBuffer google-java-format
-    autocmd FileType python AutoFormatBuffer yapf
-    autocmd FileType javascript,vue,react,typescript,typescriptreact AutoFormatBuffer prettier
-    autocmd FileType swift AutoFormatBuffer swift-format
-  augroup END
-]])
+-- vim.cmd([[
+--   augroup autoformat_settings
+--     autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+--     autocmd FileType java AutoFormatBuffer google-java-format
+--     autocmd FileType python AutoFormatBuffer yapf
+--     autocmd FileType javascript,vue,react,typescript,typescriptreact AutoFormatBuffer prettier
+--     autocmd FileType swift AutoFormatBuffer swift-format
+--   augroup END
+-- ]])
 
 -- colorizer
 vim.cmd([[
-  autocmd FileType * :ColorizerAttachToBuffer
+  autocmd bufReadPre,FileReadPre * :ColorizerAttachToBuffer
 ]])
 
 -- tailwindCSS
 vim.cmd([[
-  autocmd FileType html,javascript,typescript,typescriptreact,css,less let b:coc_root_patterns = ['.git', '.env', 'tailwind.config.js', 'tailwind.config.cjs']
+  autocmd bufReadPre,FileReadPre *.html,*.javascript,*.typescript,*.typescriptreact,*.css,*.less let b:coc_root_patterns = ['.git', '.env', 'tailwind.config.js', 'tailwind.config.cjs']
 ]])
 
 -- other autocmd
@@ -56,5 +56,5 @@ vim.cmd([[
 
 -- bufferline
 vim.cmd([[
-  autocmd FileType * :source ~/.config/nvim/lua/davidchu/plugins/bufferline.lua
+  autocmd BufReadPre,FileReadPre * :source ~/.config/nvim/lua/davidchu/plugins/bufferline.lua
 ]])

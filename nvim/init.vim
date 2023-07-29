@@ -1,5 +1,5 @@
 syntax on
-filetype off                  " required
+filetype indent on
 packloadall
 
 " Plugin Settings
