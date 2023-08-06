@@ -32,7 +32,7 @@ vim.cmd([[
     autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
     autocmd FileType java AutoFormatBuffer google-java-format
     autocmd FileType python AutoFormatBuffer yapf
-    " autocmd FileType javascript,vue,react,typescript,typescriptreact AutoFormatBuffer prettier
+    autocmd FileType javascript,vue,react,typescript,typescriptreact AutoFormatBuffer prettier
     autocmd FileType swift AutoFormatBuffer swift-format
   augroup END
 ]])
@@ -52,6 +52,7 @@ vim.cmd([[
   autocmd BufWritePost *.php :syntax enable
   autocmd BufWritePost *.php :syntax on
   autocmd FileType typescript :set makeprg=tsc
+  autocmd BufRead,BufNewFile *.ejs set filetype=ejs
 ]])
 
 -- bufferline

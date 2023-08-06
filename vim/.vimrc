@@ -63,15 +63,15 @@ nnoremap <leader>to :tabnew <CR>
 nnoremap <leader>tx :tabclose <CR>
 nnoremap <leader>tn :tabnext <CR>
 nnoremap <leader>tp :tabprevious <CR>
-nnoremap <leader>tg1 :tabn 1<CR>
-nnoremap <leader>tg2 :tabn 2<CR>
-nnoremap <leader>tg3 :tabn 3<CR>
-nnoremap <leader>tg4 :tabn 4<CR>
-nnoremap <leader>tg5 :tabn 5<CR>
-nnoremap <leader>tg6 :tabn 6<CR>
-nnoremap <leader>tg7 :tabn 7<CR>
-nnoremap <leader>tg8 :tabn 8<CR>
-nnoremap <leader>tg9 :tabn 9<CR>
+nnoremap <leader>1 :tabn 1<CR>
+nnoremap <leader>2 :tabn 2<CR>
+nnoremap <leader>3 :tabn 3<CR>
+nnoremap <leader>4 :tabn 4<CR>
+nnoremap <leader>5 :tabn 5<CR>
+nnoremap <leader>6 :tabn 6<CR>
+nnoremap <leader>7 :tabn 7<CR>
+nnoremap <leader>8 :tabn 8<CR>
+nnoremap <leader>9 :tabn 9<CR>
 nnoremap <leader>sv :vsp<CR>
 nnoremap <leader>sx :close<CR>
 nnoremap <leader>ff :Files<CR>

@@ -64,5 +64,7 @@ call vundle#begin()
   Plugin 'godlygeek/tabular' "tabular for markdown
   Plugin 'preservim/vim-markdown' "markdown plugin
 	Plugin 'hushicai/tagbar-javascript.vim' "tagbar for javascript
+  Plugin 'nikvdp/ejs-syntax' "ejs syntax
+
 call vundle#end()            " required
 call glaive#Install()

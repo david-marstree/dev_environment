@@ -27,6 +27,7 @@ opt.expandtab = true
 opt.clipboard:append("unnamedplus")
 
 vim.cmd([[
+  set noswapfile
   let &t_SI = "\e[6 q" 
   let &t_EI = "\e[2 q" 
   let @/=""
