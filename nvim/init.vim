@@ -36,6 +36,7 @@ let g:coc_global_extensions = [
     \ 'coc-css',
     \ 'coc-highlight',
     \ 'coc-snippets',
+    \ 'coc-prettier',
     \ '@yaegassy/coc-tailwindcss3'
     \]
 let g:typescript_indent_disable = 1
