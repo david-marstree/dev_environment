@@ -45,6 +45,9 @@ keymap.set("n", "<leader>fx", ":FloatermKill<CR>")
 -- tagbar
 keymap.set("n", "<F8>", ":TagbarToggle<CR>")
 
+-- nerdtree size
+keymap.set('n', "<leader><left>", ":vertical resize-5<CR>")
+keymap.set('n', "<leader><right>", ":vertical resize+5<CR>")
 
 -- coc
 vim.cmd([[

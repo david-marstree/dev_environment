@@ -52,6 +52,7 @@ vim.cmd([[
   autocmd BufWritePost *.php :syntax enable
   autocmd BufWritePost *.php :syntax on
   autocmd FileType typescript :set makeprg=tsc
+  autocmd BufRead,BufNewFile *.ejs set filetype=ejs
 ]])
 
 -- bufferline
