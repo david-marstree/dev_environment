@@ -8,7 +8,7 @@ end
 bufferline.setup({
   options = { -- custom options for bufferline
     view = "multiwindow",
-    buffer_close_icon = "",
+    buffer_close_icon = "",
     left_trunc_marker = "",
     right_trunc_marker = "",
     mode = "tabs",
