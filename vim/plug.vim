@@ -37,9 +37,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'Exafunction/codeium.vim' " Codeium AI
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " auto complete
 	" Coding
+  Plug 'sheerun/vim-polyglot' " syntax 
   Plug 'scrooloose/syntastic' " syntax check
   Plug 'docunext/closetag.vim' " auto close tag for HTML
-  Plug 'ap/vim-css-color' " css color preview
+  "Plug 'ap/vim-css-color' " css color preview
   Plug 'mattn/emmet-vim' " emmet for HTML
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown preview
 	Plug 'mxw/vim-jsx' " jsx syntax
