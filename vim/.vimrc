@@ -76,8 +76,8 @@ nnoremap <leader>sv :vsp<CR>
 nnoremap <leader>sx :close<CR>
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fs :Ag<CR>
-nnoremap <leader><left> :vertical resize+5 <CR>
-nnoremap <leader><right> :vertical resize-5 <CR>
+nnoremap <leader><right> :vertical resize+5 <CR>
+nnoremap <leader><left> :vertical resize-5 <CR>
 nnoremap <leader>rr :syntax on<CR>
 nnoremap <leader>p :r !pbpaste<CR>
 nnoremap <C-v> :r !pbpaste<CR>

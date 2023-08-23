@@ -29,7 +29,7 @@ vim.cmd([[
 -- Auto format
 vim.cmd([[
   augroup autoformat_settings
-    autocmd FileType html,css,sass,scss,less,json :AutoFormatBuffer js-beautify
+    autocmd FileType html,css,sass,scss,less,json,ejs :AutoFormatBuffer js-beautify
     autocmd FileType java :AutoFormatBuffer google-java-format
     autocmd FileType python AutoFormatBuffer yapf
     autocmd FileType javascript,vue,react,typescript,typescriptreact :AutoFormatBuffer prettier

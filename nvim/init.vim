@@ -1,3 +1,4 @@
+set nocompatible
 syntax on
 filetype indent on
 packloadall
