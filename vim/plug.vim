@@ -44,6 +44,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim' " emmet for HTML
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown preview
 	Plug 'mxw/vim-jsx' " jsx syntax
+  Plug 'jxnblk/vim-mdx-js' " mdx syntax
 
   " Neovim plugin
   Plug 'norcalli/nvim-colorizer.lua' " colorizer
