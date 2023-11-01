@@ -44,15 +44,11 @@ then
 	git clone https://github.com/christoomey/vim-tmux-navigator.git ~/.vim/pack/plugins/start/vim-tmux-navigator;
 fi
 
-# Install vim-indent-rainbow
-# if [ ! -e $HOME/.vim/autoload/rainbow.vim ]
-# then
-# 	curl -fLo $HOME/.vim/autoload/rainbow.vim --create-dirs https://raw.githubusercontent.com/adi/vim-indent-rainbow/main/autoload/rainbow.vim;
-# fi
-# if [ ! -e $HOME/.vim/autoload/togglerb.vim ]
-# then
-# 	curl -fLo $HOME/.vim/autoload/tooglerb.vim --create-dirs https://raw.githubusercontent.com/adi/vim-indent-rainbow/main/autoload/togglerb.vim;
-# fi
+# Install Nvim Packer
+if [ ! -d $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim ]
+then
+ 	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim;
+fi
 
 # bankup vimrc
 if [ -e $HOME/.vimrc ]

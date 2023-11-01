@@ -47,6 +47,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'jxnblk/vim-mdx-js' " mdx syntax
 
   " Neovim plugin
+  Plug 'nvim-lua/plenary.nvim'
   Plug 'norcalli/nvim-colorizer.lua' " colorizer
   Plug 'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
 	Plug 'akinsho/bufferline.nvim', {'tag': 'v3.*'} " bufferline
