@@ -7,16 +7,6 @@ packloadall
 source ~/plug.vim
 
 " Plugin Setting
-let g:startify_custom_header = [
-\'  $$\      $$\  $$$$$$\  $$$$$$$\   $$$$$$\    $$\',
-\'  $$$\    $$$ |$$  __$$\ $$  __$$\ $$  __$$\   $$ |',
-\'  $$$$\  $$$$ |$$ /  $$ |$$ |  $$ |$$ /  \__|$$$$$$\    $$$$$$\  $$$$$$\$$$$$$\',
-\'  $$\$$\$$ $$ |$$$$$$$$ |$$$$$$$  |\$$$$$$\  \_$$  _|  $$  __$$\$$  __$$\$$__$$\ ',
-\'  $$ \$$$  $$ |$$  __$$ |$$  __$$<  \____$$\   $$ |    $$ |\__|$$$$$$$$|$$$$$$$$|',
-\'  $$ |\$  /$$ |$$ |  $$ |$$ |  $$ |$$\   $$ |  $$ |$$\ $$ |     $$____|$$\____|',
-\'  $$ | \_/ $$ |$$ |  $$ |$$ |  $$ |\$$$$$$  |  \$$$$  |$$ |     \$$$$$$$\\$$$$$$$\ ',
-\'  \__|     \__|\__|  \__|\__|  \__| \______/    \____/ \__|      \_______|\_______|',
-\ ]
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeWinPos = "left"
 let g:airline_theme='afterglow'
@@ -38,7 +28,8 @@ let g:coc_global_extensions = [
     \ 'coc-highlight',
     \ 'coc-snippets',
     \ 'coc-prettier',
-    \ '@yaegassy/coc-tailwindcss3'
+    \ '@yaegassy/coc-tailwindcss3',
+    \ 'coc-swagger',
     \]
 let g:typescript_indent_disable = 1
 let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'
