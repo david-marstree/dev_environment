@@ -126,6 +126,8 @@ let g:coc_global_extensions = [
     \ 'coc-snippets',
 		\ 'coc-prettier',
     \ 'coc-swagger',
+    \ '@yaegassy/coc-tailwindcss3',
+    \ 'coc-yaml',
     \]
 let g:typescript_indent_disable = 1
 let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'
