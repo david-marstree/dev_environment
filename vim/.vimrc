@@ -32,6 +32,7 @@ set smartcase
 set relativenumber
 set expandtab
 set clipboard+="unnamedplus"
+set background=dark
 
 syntax on
 filetype off                  " required
@@ -102,7 +103,8 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 
 " Color scheme
-colorscheme afterglow 
+" colorscheme afterglow 
+colorscheme solarized8
 " Plugin Setting
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeWinPos = "left"

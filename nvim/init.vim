@@ -1,4 +1,5 @@
 set nocompatible
+set background=dark
 syntax on
 filetype indent on
 packloadall
