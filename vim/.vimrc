@@ -32,6 +32,7 @@ set smartcase
 set relativenumber
 set expandtab
 set clipboard+="unnamedplus"
+set background=dark
 
 syntax on
 filetype off                  " required
@@ -103,9 +104,11 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 " Color scheme
 set background=dark
+" colorscheme afterglow 
 colorscheme solarized8
 " Plugin Setting
 let g:NERDTreeMinimalUI = 1
+let g:python3_host_prog='/usr/local/bin/python3'
 let g:NERDTreeWinPos = "left"
 let g:airline_theme='afterglow'
 let g:ctrlp_custom_ignore = {

@@ -45,6 +45,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown preview
 	Plug 'mxw/vim-jsx' " jsx syntax
   Plug 'jxnblk/vim-mdx-js' " mdx syntax
+  Plug 'sansyrox/vim-python-virtualenv' " python virtualenv
 
   " Neovim plugin
   Plug 'nvim-lua/plenary.nvim'
