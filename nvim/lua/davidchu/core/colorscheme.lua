@@ -1,6 +1,6 @@
 -- set colorscheme
 -- in case it isnt installed
-local colorscheme = "afterglow"
+local colorscheme = "solarized8"
 
 local status, _ = pcall(vim.cmd, string.format("colorscheme %s", colorscheme))
 if not status then
