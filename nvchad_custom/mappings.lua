@@ -40,6 +40,9 @@ M.general = {
 			"<cmd>LazyGit<cr>",
 			"lazygit",
 		},
+
+		-- toggle
+		["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
 	},
 	v = {
 		[">"] = { ">gv", "indent" },
