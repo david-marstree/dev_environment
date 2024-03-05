@@ -1,11 +1,15 @@
-local opt = vim.opt
 local g = vim.g
+local opt = vim.opt
 
+-- Global options
 g.codeium_disable_bindings = 1
+
+-- Options
 opt.termguicolors = true
 opt.relativenumber = true
-local autocmd = vim.api.nvim_create_autocmd
 
+-- Auto Commands
+local autocmd = vim.api.nvim_create_autocmd
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {
 	pattern = "*",
