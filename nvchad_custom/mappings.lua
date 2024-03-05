@@ -6,10 +6,22 @@ M.general = {
 		[";"] = { ":", "enter command mode", opts = { nowait = true } },
 
 		-- tmux navigation
-		["<C-h>"] = { "<cmd>NvimTmuxNavigateLeft<cr>", "tmux left" },
-		["<C-j>"] = { "<cmd>NvimTmuxNavigateDown<cr>", "tmux down" },
-		["<C-k>"] = { "<cmd>NvimTmuxNavigateUp<cr>", "tmux up" },
-		["<C-l>"] = { "<cmd>NvimTmuxNavigateRight<cr>", "tmux right" },
+		["<C-h>"] = {
+			"<cmd>NvimTmuxNavigateLeft<cr>",
+			"tmux left",
+		},
+		["<C-j>"] = {
+			"<cmd>NvimTmuxNavigateDown<cr>",
+			"tmux down",
+		},
+		["<C-k>"] = {
+			"<cmd>NvimTmuxNavigateUp<cr>",
+			"tmux up",
+		},
+		["<C-l>"] = {
+			"<cmd>NvimTmuxNavigateRight<cr>",
+			"tmux right",
+		},
 
 		--  format with conform
 		["<leader>fm"] = {
@@ -32,8 +44,14 @@ M.general = {
 		},
 
 		-- move lines up and down
-		["K"] = { "<cmd>m .-2<cr>==", "move line up" },
-		["J"] = { "<cmd>m .+1<cr>==", "move line down" },
+		["K"] = {
+			"<cmd>m .-2<cr>==",
+			"move line up",
+		},
+		["J"] = {
+			"<cmd>m .+1<cr>==",
+			"move line down",
+		},
 
 		-- lazygit
 		["<leader>gg"] = {
@@ -42,13 +60,25 @@ M.general = {
 		},
 
 		-- toggle
-		["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+		["<leader>e"] = {
+			"<cmd> NvimTreeToggle <CR>",
+			"Toggle nvimtree",
+		},
 	},
 	v = {
-		[">"] = { ">gv", "indent" },
+		[">"] = {
+			">gv",
+			"indent",
+		},
 		--move lines up and down
-		["K"] = { ":m '<-2<cr>gv=gv", "move line up" },
-		["J"] = { ":m '>+1<cr>gv=gv", "move line down" },
+		["K"] = {
+			":m '<-2<cr>gv=gv",
+			"move line up",
+		},
+		["J"] = {
+			":m '>+1<cr>gv=gv",
+			"move line down",
+		},
 	},
 }
 

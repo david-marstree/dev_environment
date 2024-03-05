@@ -10,6 +10,8 @@ local options = {
 		typescript = { "prettier" },
 		typescriptreact = { "prettier" },
 		css = { "prettier" },
+		less = { "prettier" },
+		html = { "prettier" },
 
 		sh = { "shfmt" },
 	},
