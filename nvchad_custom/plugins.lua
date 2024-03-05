@@ -195,6 +195,20 @@ local plugins = {
 		ft = { "markdown" },
 	},
 
+	-- install swagger preview
+	{
+		"vinnymeller/swagger-preview.nvim",
+		run = "npm install -g swagger-ui-watcher",
+		config = function()
+			require("swagger-preview").setup({
+				-- The port to run the preview server on
+				port = 8000,
+				-- The host to run the preview server on
+				host = "localhost",
+			})
+		end,
+	},
+
 	-- All NvChad plugins are lazy-loaded by default
 	-- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
 	-- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example

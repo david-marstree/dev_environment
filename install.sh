@@ -2,7 +2,7 @@
 brew install neovim source-highlight tmux koekeishiya/formulae/yabai koekeishiya/formulae/skhd fzf ripgrep ag code-minimap
 
 # Install Prettier and js-beautify
-sudo npm install -g prettier js-beautify esctags emmet-ls typescript-language-server
+sudo npm install -g prettier js-beautify esctags emmet-ls typescript-language-server swagger-ui-watcher
 
 # Install vim-tmux-navigator
 if [ ! -d $HOME/.vim/pack/plugins/start/vim-tmux-navigator ]; then
