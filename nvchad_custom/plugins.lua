@@ -199,6 +199,7 @@ local plugins = {
 	{
 		"vinnymeller/swagger-preview.nvim",
 		run = "npm install -g swagger-ui-watcher",
+		cmd = { "SwaggerPreview", "SwaggerPreviewStop", "SwaggerPreviewToggle" },
 		config = function()
 			require("swagger-preview").setup({
 				-- The port to run the preview server on
