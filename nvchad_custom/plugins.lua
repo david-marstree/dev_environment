@@ -154,11 +154,33 @@ local plugins = {
 		end,
 	},
 
-	-- To make a plugin not be loaded
-	-- {
-	--   "NvChad/nvim-colorizer.lua",
-	--   enabled = false
-	-- },
+	{
+		"NvChad/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup({
+				user_default_options = {
+					tailwind = true,
+					css = true,
+					less = true,
+				},
+			})
+		end,
+	},
+
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			{ "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+		},
+		opts = function(_, opts)
+			-- original LazyVim kind icon formatter
+			local format_kinds = opts.formatting.format
+			opts.formatting.format = function(entry, item)
+				format_kinds(entry, item) -- add icons
+				return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+			end
+		end,
+	},
 
 	-- All NvChad plugins are lazy-loaded by default
 	-- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`

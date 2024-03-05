@@ -12,6 +12,10 @@ M.treesitter = {
 		"c",
 		"markdown",
 		"markdown_inline",
+		"php",
+		"yaml",
+		"json",
+		"dockerfile",
 	},
 	indent = {
 		enable = true,
@@ -39,6 +43,7 @@ M.mason = {
 		"typescript-language-server",
 		"deno",
 		"prettier",
+		"tailwindcss-language-server",
 
 		-- c/cpp stuff
 		"clangd",
@@ -46,6 +51,9 @@ M.mason = {
 
 		-- shell stuff
 		"shfmt",
+
+		-- php stuff
+		"intelephense",
 	},
 }
 
