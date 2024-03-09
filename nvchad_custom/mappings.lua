@@ -64,6 +64,69 @@ M.general = {
 			"<cmd> NvimTreeToggle <CR>",
 			"Toggle nvimtree",
 		},
+
+		["<leader>1"] = {
+			function()
+				vim.api.nvim_set_current_buf(vim.t.bufs[1])
+			end,
+			"Switct to tab 1",
+		},
+
+		["<leader>2"] = {
+			function()
+				vim.api.nvim_set_current_buf(vim.t.bufs[2])
+			end,
+			"Switct to tab 2",
+		},
+
+		["<leader>3"] = {
+			function()
+				vim.api.nvim_set_current_buf(vim.t.bufs[3])
+			end,
+			"Switct to tab 3",
+		},
+
+		["<leader>4"] = {
+			function()
+				vim.api.nvim_set_current_buf(vim.t.bufs[4])
+			end,
+			"Switct to tab 4",
+		},
+
+		["<leader>5"] = {
+			function()
+				vim.api.nvim_set_current_buf(vim.t.bufs[5])
+			end,
+			"Switct to tab 5",
+		},
+
+		["<leader>6"] = {
+			function()
+				vim.api.nvim_set_current_buf(vim.t.bufs[6])
+			end,
+			"Switct to tab 6",
+		},
+
+		["<leader>7"] = {
+			function()
+				vim.api.nvim_set_current_buf(vim.t.bufs[7])
+			end,
+			"Switct to tab 7",
+		},
+
+		["<leader>8"] = {
+			function()
+				vim.api.nvim_set_current_buf(vim.t.bufs[8])
+			end,
+			"Switct to tab 8",
+		},
+
+		["<leader>9"] = {
+			function()
+				vim.api.nvim_set_current_buf(vim.t.bufs[9])
+			end,
+			"Switct to tab 9",
+		},
 	},
 	v = {
 		[">"] = {
