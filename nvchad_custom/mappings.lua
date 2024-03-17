@@ -128,6 +128,7 @@ M.general = {
 			"Switct to tab 9",
 		},
 	},
+
 	v = {
 		[">"] = {
 			">gv",
