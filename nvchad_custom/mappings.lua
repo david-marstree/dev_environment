@@ -127,6 +127,16 @@ M.general = {
 			end,
 			"Switct to tab 9",
 		},
+
+		-- chatgpt
+		["<leader>ca"] = {
+			"<cmd>ChatGPT<cr>",
+			"ChatGPT",
+		},
+		["<leader>ce"] = {
+			"<cmd>ChatGPTEditWithInstructions<cr>",
+			"ChatGPT Edit",
+		},
 	},
 
 	v = {
@@ -143,6 +153,12 @@ M.general = {
 			":m '>+1<cr>gv=gv",
 			"move line down",
 		},
+	},
+}
+
+M.disabled = {
+	n = {
+		["<C-n>"] = "",
 	},
 }
 

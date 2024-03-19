@@ -38,5 +38,21 @@ ln -s yabai ~/.config
 yabai --start-service
 skhd --start-service
 
+# Install OPENAI_API
+openai=$(cat ~/.profile | grep OPENAI)
+if [ "$openai" == "" ]; then
+	export OPENAI_API_KEY='d15aa291f3574cf4998bed887c9ff0aa'
+	export OPENAI_API_BASE='https://lemontree-openai.openai.azure.com'
+	export OPENAI_API_TYPE='azure'
+	export OPENAI_API_VERSION='2023-05-15'
+	export OPENAI_API_ENGINE='chat'
+
+	echo "export OPENAI_API_KEY='d15aa291f3574cf4998bed887c9ff0aa'" >>~/.profile
+	echo "export OPENAI_API_BASE='https://lemontree-openai.openai.azure.com'" >>~/.profile
+	echo "export OPENAI_API_TYPE='azure'" >>~/.profile
+	echo "export OPENAI_API_VERSION='2023-05-15'" >>~/.profile
+	echo "export OPENAI_API_ENGINE='chat'" >>~/.profile
+fi
+
 echo "Finish"
 exit 0
