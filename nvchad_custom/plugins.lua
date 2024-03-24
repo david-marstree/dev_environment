@@ -19,11 +19,6 @@ local plugins = {
 	},
 
 	{
-		"nvim-treesitter/nvim-treesitter",
-		opts = overrides.treesitter,
-	},
-
-	{
 		"nvim-tree/nvim-tree.lua",
 		opts = overrides.nvimtree,
 	},
