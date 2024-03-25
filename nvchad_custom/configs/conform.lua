@@ -12,6 +12,11 @@ local options = {
 		css = { "prettier" },
 		less = { "prettier" },
 		html = { "prettier" },
+		json = { "prettier" },
+		jsonc = { "prettier" },
+		yaml = { "prettier" },
+		markdown = { "prettier" },
+		markdown_inline = { "prettier" },
 
 		sh = { "shfmt" },
 	},
