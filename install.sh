@@ -44,14 +44,14 @@ if [ "$openai" == "" ]; then
 	export OPENAI_API_KEY='d15aa291f3574cf4998bed887c9ff0aa'
 	export OPENAI_API_BASE='https://lemontree-openai.openai.azure.com'
 	export OPENAI_API_TYPE='azure'
-	export OPENAI_API_VERSION='2023-05-15'
-	export OPENAI_API_AZURE_ENGINE='gpt-35-turbo-david'
+	export OPENAI_API_VERSION='2024-02-01'
+	export OPENAI_API_AZURE_ENGINE='gpt-4-david'
 
 	echo "export OPENAI_API_KEY='d15aa291f3574cf4998bed887c9ff0aa'" >>~/.profile
 	echo "export OPENAI_API_BASE='https://lemontree-openai.openai.azure.com'" >>~/.profile
 	echo "export OPENAI_API_TYPE='azure'" >>~/.profile
-	echo "export OPENAI_API_VERSION='2023-05-15'" >>~/.profile
-	echo "export OPENAI_API_AZURE_ENGINE='gpt-35-turbo-david'" >>~/.profile
+	echo "export OPENAI_API_VERSION='2024-02-01'" >>~/.profile
+	echo "export OPENAI_API_AZURE_ENGINE='gpt-4-david'" >>~/.profile
 fi
 
 echo "Finish"
