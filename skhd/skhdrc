@@ -69,17 +69,17 @@ ctrl + alt - s : brew services start yabai;
 ctrl + alt - r : brew services restart yabai;
 
 # control only main one display
-ctrl - 6 : yabai -m space --focus 6;
-ctrl - 7 : yabai -m space --focus 7;
-ctrl - 8 : yabai -m space --focus 8;
-ctrl - 9 : yabai -m space --focus 9;
+# ctrl - 6 : yabai -m space --focus 6;
+# ctrl - 7 : yabai -m space --focus 7;
+# ctrl - 8 : yabai -m space --focus 8;
+# ctrl - 9 : yabai -m space --focus 9;
 
 # control only right one display
-alt - 1 : yabai -m space --focus 11;
-alt - 2 : yabai -m space --focus 12;
-alt - 3 : yabai -m space --focus 13;
-alt - 4 : yabai -m space --focus 14;
-alt - 5 : yabai -m space --focus 15;
+# alt - 1 : yabai -m space --focus 11;
+# alt - 2 : yabai -m space --focus 12;
+# alt - 3 : yabai -m space --focus 13;
+# alt - 4 : yabai -m space --focus 14;
+# alt - 5 : yabai -m space --focus 15;
 
 # control both display
 # ctrl - 1 : yabai -m space --focus 11; yabai -m space --focus 1;

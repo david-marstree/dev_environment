@@ -12,28 +12,28 @@ opt.relativenumber = true
 local autocmd = vim.api.nvim_create_autocmd
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {
-	pattern = "*",
-	command = "tabdo wincmd =",
+  pattern = "*",
+  command = "tabdo wincmd =",
 })
 
 -- TailwindSortOnSaveToggle
 autocmd("bufReadPre", {
-	pattern = "*.jsx,*.js,*.html,*.tsx,*.ts,*.less,*.css,*.yaml,*.json",
-	command = "TailwindSortOnSaveToggle",
+  pattern = "*.jsx,*.js,*.html,*.tsx,*.ts,*.less,*.css,*.yaml,*.json",
+  command = "TailwindSortOnSaveToggle",
 })
 
 -- Auto format on save
 autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
 })
 
 vim.cmd([[
   set noswapfile
-  let &t_SI = "\e[6 q" 
-  let &t_EI = "\e[2 q" 
+  let &t_SI = "\e[6 q"
+  let &t_EI = "\e[2 q"
   let @/=""
 
   filetype plugin indent on
