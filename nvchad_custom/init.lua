@@ -47,3 +47,9 @@ vim.cmd([[
     call timer_start(1000,'CheckUpdate')
   endfunction
 ]])
+
+vim.filetype.add({
+  extension = {
+    mdx = 'tsx'
+  }
+})

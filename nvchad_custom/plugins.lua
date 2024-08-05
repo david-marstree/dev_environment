@@ -221,6 +221,17 @@ local plugins = {
     },
   },
 
+  -- support mdx
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = overrides.treesitter,
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "syntax")
+      require("nvim-treesitter.configs").setup(opts)
+      -- tell treesitter to use the markdown parser for mdx files
+      vim.treesitter.language.register('markdown', 'mdx')
+    end,
+  },
   -- All NvChad plugins are lazy-loaded by default
   -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
   -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
